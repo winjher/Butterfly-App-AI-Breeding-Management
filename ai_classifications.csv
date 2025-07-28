@@ -1,1 +1,2 @@
 timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stage,stage_confidence,predicted_disease,disease_confidence,predicted_defect,defect_confidence
+2025-07-28 03:05:56,Species Identification,jerwin,Butterfly-Clippers,0.9563799119614895

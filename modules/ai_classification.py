@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import os
+import datetime
 from data.butterfly_species_info import BUTTERFLY_SPECIES_INFO, LIFESTAGES_INFO, PUPAE_DEFECTS_INFO, LARVAL_DISEASES_INFO
 from utils.image_processing import process_image_for_classification
 from utils.csv_handlers import save_to_csv
