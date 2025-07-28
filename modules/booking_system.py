@@ -31,6 +31,46 @@ def book_visit_section():
     
     # Available farms (mock data)
     farms = {
+        "Lorica's Butterfly Breeding Farm": {
+            "location": "Bunganay, Boac, Marinduque, Philippines",
+            "coordinates": [13.391627752131035, 121.83732779599431],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
+        },
+        "JCM Butterfly Breeding Farm": {
+            "location": "Cawit, Boac, Marinduque, Philippines",
+            "coordinates": [16.4023, 120.5960],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
+        },
+        "Marl Insects Farm": {
+            "location": "Caganhao, Boac, Marinduque, Philippines",
+            "coordinates": [13.402601213675057, 121.82643398620317],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
+        },
+        "Lyra-Ysabelle Butterfly": {
+            "location": "Cawit, Boac, Marinduque, Philippines",
+            "coordinates": [13.380662651692896, 121.82747508250148],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
+        },
+        "Saluciana Integrated and Butterfly Farm": {
+            "location": "Sta. Cruz, Marinduque, Philippines",
+            "coordinates": [13.43847474827148, 122.0971865954574],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
+        },
         "Butterfly Paradise Farm": {
             "location": "Baguio City, Philippines",
             "coordinates": [16.4023, 120.5960],

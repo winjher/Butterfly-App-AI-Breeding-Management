@@ -1,2 +1,3 @@
 batch_id,species,stage,larva_count,health_status,created_date,created_by,notes,last_updated
 CAGE_20250728_0302,Butterfly-Clippers,pupa,11,warning,2025-07-28 03:02:15,jerwin,
+CAGE_20250728_0411,Butterfly-Clippers,egg,10,healthy,2025-07-28 04:11:37,eric,

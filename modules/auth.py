@@ -109,6 +109,10 @@ def handle_authentication():
         with st.form("register_form"):
             new_username = st.text_input("Choose Username")
             new_email = st.text_input("Email (optional)")
+            role = st.selectbox("Role (optional)", 
+                              options=["user", "breeder", "purchaser", "enthusiast/tourist", "student", "faculty"],
+                              index=0,
+                              help="Select your role to access specific features")
             new_password = st.text_input("Password", type="password")
             confirm_password = st.text_input("Confirm Password", type="password")
             register_submitted = st.form_submit_button("Register")
@@ -116,7 +120,7 @@ def handle_authentication():
             if register_submitted:
                 if new_username and new_password:
                     if new_password == confirm_password:
-                        if create_user(new_username, new_password, new_email):
+                        if create_user(new_username, new_password, new_email, role):
                             st.success("Account created successfully! Please login.")
                         else:
                             st.error("Username already exists")

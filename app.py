@@ -6,6 +6,8 @@ from modules.ai_classification import ai_classification_app
 from modules.point_of_sale import point_of_sale_app
 from modules.sales_tracking import sales_tracking_app
 from modules.booking_system import booking_system_app
+from modules.student_dashboard import student_dashboard_app
+from modules.purchaser_profile import purchaser_profile_app
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
 
@@ -37,7 +39,7 @@ def main():
     st.sidebar.title("🦋 Butterfly Ecosystem")
     st.sidebar.write(f"Welcome, **{st.session_state.username}**!")
     
-    # Navigation menu
+    # Navigation menu with role-based access
     apps = {
         "🏠 Dashboard": "dashboard",
         "🦋 Breeding Management": "breeding",
@@ -46,6 +48,23 @@ def main():
         "📊 Sales Tracking": "sales_tracking",
         "🌍 Farm Booking": "booking"
     }
+    
+    # Add role-specific dashboards
+    if st.session_state.get('user_role') == 'student':
+        apps["🎓 Student Dashboard"] = "student_dashboard"
+    
+    if st.session_state.get('user_role') == 'purchaser':
+        apps["🛒 Purchaser Profile"] = "purchaser_profile"
+    
+    # Role-based feature highlighting
+    if st.session_state.get('user_role') in ['breeder', 'faculty']:
+        st.sidebar.info("🔬 You have access to advanced breeding features")
+    elif st.session_state.get('user_role') == 'purchaser':
+        st.sidebar.info("🛒 Enhanced purchasing features available")
+    elif st.session_state.get('user_role') == 'student':
+        st.sidebar.success("📚 Student Dashboard with TESDA modules available")
+    elif st.session_state.get('user_role') == 'enthusiast/tourist':
+        st.sidebar.info("🦋 Tourism and booking features optimized for you")
     
     selected_app = st.sidebar.selectbox("Select Application", list(apps.keys()))
     
@@ -70,6 +89,10 @@ def main():
         sales_tracking_app()
     elif app_key == "booking":
         booking_system_app()
+    elif app_key == "student_dashboard":
+        student_dashboard_app()
+    elif app_key == "purchaser_profile":
+        purchaser_profile_app()
 
 def dashboard_app():
     """Dashboard overview of the entire ecosystem"""

@@ -1,2 +1,5 @@
 timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stage,stage_confidence,predicted_disease,disease_confidence,predicted_defect,defect_confidence
 2025-07-28 03:05:56,Species Identification,jerwin,Butterfly-Clippers,0.9563799119614895
+2025-07-28 03:50:05,Lifecycle Stage,jerwin,Pupae,0.9289526844470476
+2025-07-28 04:14:20,Complete Analysis (All Models),eric,Butterfly-Tailed Jay,0.8894933792916009,Eggs,0.9414944652127123,Nucleopolyhedrosis,0.7079365537575126,Deformed body,0.8832724480031751
+2025-07-28 04:17:24,Species Identification,eric,Moth-Atlas,0.9696742620879817
