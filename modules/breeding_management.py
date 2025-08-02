@@ -98,7 +98,7 @@ def cage_management():
                 "Butterfly Species", 
                 options=list(BUTTERFLY_SPECIES_INFO.keys())
             )
-            larva_count = st.number_input("Initial Larva Count", min_value=1, value=10)
+            larva_count = st.number_input("Initial Count", min_value=1, value=10)
             cage_id = st.text_input("Cage ID", value=f"CAGE_{datetime.datetime.now().strftime('%Y%m%d_%H%M')}")
         
         with col2:

@@ -1,1 +1,3 @@
 order_number,date,time,item_id,item_name,species,quantity,unit_price,unit_cost,subtotal_revenue,subtotal_profit,cashier
+ORD202508024987,2025-08-02,09:18:14,5,Common Mormon,Butterfly-Common Mormon,13,48,22,624,338,admin
+ORD202508024987,2025-08-02,09:18:14,7,Gray Glassy Tiger,Butterfly-Gray Glassy Tiger,20,78,38,1560,800,admin

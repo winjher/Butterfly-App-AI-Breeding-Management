@@ -3,3 +3,8 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-07-28 03:50:05,Lifecycle Stage,jerwin,Pupae,0.9289526844470476
 2025-07-28 04:14:20,Complete Analysis (All Models),eric,Butterfly-Tailed Jay,0.8894933792916009,Eggs,0.9414944652127123,Nucleopolyhedrosis,0.7079365537575126,Deformed body,0.8832724480031751
 2025-07-28 04:17:24,Species Identification,eric,Moth-Atlas,0.9696742620879817
+2025-08-02 09:11:21,Complete Analysis (All Models),admin,Butterfly-Emerald Swallowtail,0.8795377702805264,Pupae,0.8201825153922885,Gnathostomiasis,0.7970243525776469,Overbend,0.8556075770748914
+2025-08-02 09:12:09,Species Identification,admin,Butterfly-Paper Kite,0.8586885943666126
+2025-08-02 09:12:43,Species Identification,admin,Butterfly-Gray Glassy Tiger,0.7903099135120388
+2025-08-02 09:17:02,Lifecycle Stage,admin,Larvae,0.9226775606485538
+2025-08-02 09:30:03,Pupae Defect Analysis,rob,Old Pupa,0.8948999331076943

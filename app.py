@@ -8,6 +8,7 @@ from modules.sales_tracking import sales_tracking_app
 from modules.booking_system import booking_system_app
 from modules.student_dashboard import student_dashboard_app
 from modules.purchaser_profile import purchaser_profile_app
+from modules.profile_management import profile_management_app
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
 
@@ -42,6 +43,7 @@ def main():
     # Navigation menu with role-based access
     apps = {
         "🏠 Dashboard": "dashboard",
+        "👤 My Profile": "profile",
         "🦋 Breeding Management": "breeding",
         "🤖 AI Classification": "ai_classification",
         "💰 Point of Sale": "pos",
@@ -79,6 +81,8 @@ def main():
     
     if app_key == "dashboard":
         dashboard_app()
+    elif app_key == "profile":
+        profile_management_app()
     elif app_key == "breeding":
         breeding_management_app()
     elif app_key == "ai_classification":

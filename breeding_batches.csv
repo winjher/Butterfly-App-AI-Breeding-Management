@@ -1,3 +1,8 @@
 batch_id,species,stage,larva_count,health_status,created_date,created_by,notes,last_updated
-CAGE_20250728_0302,Butterfly-Clippers,pupa,11,warning,2025-07-28 03:02:15,jerwin,
-CAGE_20250728_0411,Butterfly-Clippers,egg,10,healthy,2025-07-28 04:11:37,eric,
+CAGE_20250728_0302,Butterfly-Clippers,pupa,11,warning,2025-07-28 03:02:15,jerwin,,
+CAGE_20250728_0411,Butterfly-Clippers,egg,10,healthy,2025-07-28 04:11:37,eric,,
+CAGE_20250802_0908,Butterfly-Clippers,larva,23,healthy,2025-08-02 09:08:25,admin,,
+CAGE_20250802_0908,Butterfly-Golden Birdwing,larva,36,healthy,2025-08-02 09:08:42,admin,,
+CAGE_20250802_0924,Butterfly-Emerald Swallowtail,pupa,45,healthy,2025-08-02 09:24:11,rob,,
+CAGE_20250802_0926,Butterfly-Common Mime,egg,19,healthy,2025-08-02 09:26:31,rob,,
+CAGE_20250802_0926,Butterfly-Common Mime,egg,17,healthy,2025-08-02 09:26:32,rob,,2025-08-02 09:26:46
