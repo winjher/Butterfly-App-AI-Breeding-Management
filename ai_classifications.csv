@@ -8,3 +8,8 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-08-02 09:12:43,Species Identification,admin,Butterfly-Gray Glassy Tiger,0.7903099135120388
 2025-08-02 09:17:02,Lifecycle Stage,admin,Larvae,0.9226775606485538
 2025-08-02 09:30:03,Pupae Defect Analysis,rob,Old Pupa,0.8948999331076943
+2025-08-03 03:48:34,Lifecycle Stage,che,Eggs,0.8621965361577826
+2025-08-03 03:49:18,Species Identification,che,Butterfly-Gray Glassy Tiger,0.8962214568820474
+2025-08-03 03:51:18,Species Identification,che,Butterfly-Red Lacewing,0.7707354847585843
+2025-08-03 03:51:55,Lifecycle Stage,che,Butterfly,0.9393800295926957
+2025-08-03 03:54:06,Species Identification,che,Butterfly-Emerald Swallowtail,0.8487749360092265

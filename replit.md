@@ -40,6 +40,33 @@ The application follows a modular Streamlit architecture with the following key 
 - Session state management
 - Default admin account creation
 
+### Profile Management (`modules/profile_management.py`)
+- Role-based profile editing with extended user fields
+- Contact information, birthday, and address management
+- Payment information storage (credit card last 4 digits)
+- Student and faculty specific profile sections
+
+### Premium System (`modules/premium_system.py`)
+- Premium membership subscription (₱299/month)
+- Commission tracking and Level 2 achievement system
+- 260,000 pesos earnings milestone for Level 2 status
+- 20,000 pesos achievement prize for reaching Level 2
+- Ewallet integration with transaction history
+- Signup bonus system (200 pesos GCash bonus)
+
+### Email Notifications (`modules/email_notifications.py`)
+- SendGrid integration for automated email campaigns
+- Premium membership promotion emails to breeders
+- Level upgrade congratulations notifications
+- Bulk email capabilities for breeder outreach
+
+### Landing Page (`modules/landing_page.py`)
+- Enhanced dashboard with signup bonus promotion
+- Premium membership benefits showcase
+- Success stories and testimonials display
+- Top earners leaderboard
+- Feature highlights and conversion optimization
+
 ### Breeding Management (`modules/breeding_management.py`)
 - Cage management system
 - Task scheduling and tracking

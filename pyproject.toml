@@ -7,4 +7,5 @@ dependencies = [
     "folium>=0.20.0",
     "streamlit-folium>=0.25.0",
     "streamlit>=1.47.1",
+    "sendgrid>=6.12.4",
 ]

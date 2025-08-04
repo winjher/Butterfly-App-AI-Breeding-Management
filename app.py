@@ -9,6 +9,9 @@ from modules.booking_system import booking_system_app
 from modules.student_dashboard import student_dashboard_app
 from modules.purchaser_profile import purchaser_profile_app
 from modules.profile_management import profile_management_app
+from modules.premium_system import premium_system_app, admin_premium_management
+from modules.email_notifications import email_notifications_app
+from modules.landing_page import enhanced_landing_page
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
 
@@ -44,12 +47,18 @@ def main():
     apps = {
         "🏠 Dashboard": "dashboard",
         "👤 My Profile": "profile",
+        "💎 Premium System": "premium",
         "🦋 Breeding Management": "breeding",
         "🤖 AI Classification": "ai_classification",
         "💰 Point of Sale": "pos",
         "📊 Sales Tracking": "sales_tracking",
         "🌍 Farm Booking": "booking"
     }
+    
+    # Add admin-only features
+    if st.session_state.get('user_role') == 'admin':
+        apps["🔧 Premium Admin"] = "premium_admin"
+        apps["📧 Email Notifications"] = "email_notifications"
     
     # Add role-specific dashboards
     if st.session_state.get('user_role') == 'student':
@@ -83,6 +92,12 @@ def main():
         dashboard_app()
     elif app_key == "profile":
         profile_management_app()
+    elif app_key == "premium":
+        premium_system_app()
+    elif app_key == "premium_admin":
+        admin_premium_management()
+    elif app_key == "email_notifications":
+        email_notifications_app()
     elif app_key == "breeding":
         breeding_management_app()
     elif app_key == "ai_classification":
@@ -100,54 +115,9 @@ def main():
 
 def dashboard_app():
     """Dashboard overview of the entire ecosystem"""
-    st.title("🏠 Butterfly Ecosystem Dashboard")
     
-    # Overview metrics
-    col1, col2, col3, col4 = st.columns(4)
-    
-    with col1:
-        st.metric("Active Batches", get_active_batches_count())
-    with col2:
-        st.metric("Total Species", get_species_count())
-    with col3:
-        st.metric("Sales This Month", get_monthly_sales())
-    with col4:
-        st.metric("Farm Bookings", get_booking_count())
-    
-    # Recent activity
-    st.subheader("Recent Activity")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.write("**Recent Breeding Activities**")
-        # Show recent breeding log entries
-        st.info("Check Breeding Management for detailed logs")
-    
-    with col2:
-        st.write("**Recent Sales**")
-        # Show recent sales
-        st.info("Check Sales Tracking for detailed records")
-    
-    # Quick actions
-    st.subheader("Quick Actions")
-    
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        if st.button("🦋 New Breeding Batch"):
-            st.session_state.quick_action = "new_batch"
-            st.rerun()
-    
-    with col2:
-        if st.button("🤖 Classify Image"):
-            st.session_state.quick_action = "classify"
-            st.rerun()
-    
-    with col3:
-        if st.button("💰 Record Sale"):
-            st.session_state.quick_action = "sale"
-            st.rerun()
+    # Show enhanced landing page with signup bonus
+    enhanced_landing_page()
 
 def get_active_batches_count():
     """Get count of active breeding batches"""

@@ -31,14 +31,6 @@ def book_visit_section():
     
     # Available farms (mock data)
     farms = {
-        "Lorica's Butterfly Breeding Farm": {
-            "location": "Bunganay, Boac, Marinduque, Philippines",
-            "coordinates": [13.391627752131035, 121.83732779599431],
-            "description": "Premier butterfly breeding facility with guided tours",
-            "price_per_person": 150,
-            "max_capacity": 20,
-            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
-        },
         "JCM Butterfly Breeding Farm": {
             "location": "Cawit, Boac, Marinduque, Philippines",
             "coordinates": [16.4023, 120.5960],
@@ -47,9 +39,9 @@ def book_visit_section():
             "max_capacity": 20,
             "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
         },
-        "Marl Insects Farm": {
-            "location": "Caganhao, Boac, Marinduque, Philippines",
-            "coordinates": [13.402601213675057, 121.82643398620317],
+        "Lorica's Butterfly Breeding Farm": {
+            "location": "Bunganay, Boac, Marinduque, Philippines",
+            "coordinates": [13.391627752131035, 121.83732779599431],
             "description": "Premier butterfly breeding facility with guided tours",
             "price_per_person": 150,
             "max_capacity": 20,
@@ -63,6 +55,15 @@ def book_visit_section():
             "max_capacity": 20,
             "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
         },
+        "Marl Insects Farm": {
+            "location": "Caganhao, Boac, Marinduque, Philippines",
+            "coordinates": [13.402601213675057, 121.82643398620317],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"]
+        },
+ 
         "Saluciana Integrated and Butterfly Farm": {
             "location": "Sta. Cruz, Marinduque, Philippines",
             "coordinates": [13.43847474827148, 122.0971865954574],
@@ -316,6 +317,72 @@ def farm_locations_section():
     
     # Farm information (expanded)
     farms_info = {
+        "JCM Butterfly Breeding Farm": {
+            "location": "Cawit, Boac, Marinduque, Philippines",
+            "coordinates": [16.4023, 120.5960],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"],
+            "operating_hours": "8:00 AM - 5:00 PM",
+            "contact": "+63 937 193 2565",
+            "email": "info@jmc.ph",
+            "rating": 4.8,
+            "facilities": ["Visitor Center", "Gift Shop", "Restaurant", "Parking"]
+
+        },
+        "Lorica's Butterfly Breeding Farm": {
+            "location": "Bunganay, Boac, Marinduque, Philippines",
+            "coordinates": [13.391627752131035, 121.83732779599431],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"],
+            "operating_hours": "8:00 AM - 5:00 PM",
+            "contact": "+63 927 923 4527",
+            "email": "info@lorica.ph",
+            "rating": 4.8,
+            "facilities": ["Visitor Center", "Gift Shop", "Restaurant", "Parking"]
+        },
+        "Lyra-Ysabelle Butterfly": {
+            "location": "Cawit, Boac, Marinduque, Philippines",
+            "coordinates": [13.380662651692896, 121.82747508250148],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"],
+            "operating_hours": "8:00 AM - 5:00 PM",
+            "contact": "+63 932 023 4564",
+            "email": "info@lyra-ysabelle.ph",
+            "rating": 4.8,
+            "facilities": ["Visitor Center", "Gift Shop", "Restaurant", "Parking"]
+        },
+"Marl Insects Farm": {
+            "location": "Caganhao, Boac, Marinduque, Philippines",
+            "coordinates": [13.402601213675057, 121.82643398620317],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"],
+            "operating_hours": "8:00 AM - 5:00 PM",
+            "contact": "+63 918 128 4360",
+            "email": "info@marlindectsfarm.ph",
+            "rating": 4.8,
+            "facilities": ["Visitor Center", "Gift Shop", "Restaurant", "Parking"]
+        },
+        "Saluciana Integrated and Butterfly Farm": {
+            "location": "Sta. Cruz, Marinduque, Philippines",
+            "coordinates": [13.43847474827148, 122.0971865954574],
+            "description": "Premier butterfly breeding facility with guided tours",
+            "price_per_person": 150,
+            "max_capacity": 20,
+            "specialties": ["Tropical butterflies", "Educational tours", "Photography sessions"],
+            "operating_hours": "8:00 AM - 5:00 PM",
+            "contact": "+63 915 123 4269",
+            "email": "info@sakiciana.ph",
+            "rating": 4.8,
+            "facilities": ["Visitor Center", "Gift Shop", "Restaurant", "Parking"]
+        },
         "Butterfly Paradise Farm": {
             "location": "Baguio City, Philippines",
             "coordinates": [16.4023, 120.5960],

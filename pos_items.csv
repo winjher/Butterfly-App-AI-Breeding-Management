@@ -1,3 +1,6 @@
 order_number,date,time,item_id,item_name,species,quantity,unit_price,unit_cost,subtotal_revenue,subtotal_profit,cashier
 ORD202508024987,2025-08-02,09:18:14,5,Common Mormon,Butterfly-Common Mormon,13,48,22,624,338,admin
 ORD202508024987,2025-08-02,09:18:14,7,Gray Glassy Tiger,Butterfly-Gray Glassy Tiger,20,78,38,1560,800,admin
+ORD202508024089,2025-08-02,23:18:11,11,Paper Kite,Butterfly-Paper Kite,13,81,40,1053,533,dan
+ORD202508037060,2025-08-03,03:55:19,11,Paper Kite,Butterfly-Paper Kite,7,81,40,567,287,che
+ORD202508037060,2025-08-03,03:55:19,4,Common Mime,Butterfly-Common Mime,5,65,30,325,175,che
