@@ -15,41 +15,28 @@ def initialize_premium_db():
     conn = sqlite3.connect(DATABASE_FILE)
     cursor = conn.cursor()
     
-    # Add premium-related columns to users table
-    try:
-        cursor.execute('ALTER TABLE users ADD COLUMN is_premium BOOLEAN DEFAULT 0')
-    except sqlite3.OperationalError:
-        pass
+    # Check if columns exist before adding them
+    cursor.execute("PRAGMA table_info(users)")
+    existing_columns = [column[1] for column in cursor.fetchall()]
     
-    try:
-        cursor.execute('ALTER TABLE users ADD COLUMN premium_start_date DATE')
-    except sqlite3.OperationalError:
-        pass
+    # Add premium-related columns to users table if they don't exist
+    columns_to_add = [
+        ('is_premium', 'BOOLEAN DEFAULT 0'),
+        ('premium_start_date', 'DATE'),
+        ('premium_end_date', 'DATE'),
+        ('total_earnings', 'DECIMAL DEFAULT 0'),
+        ('commission_level', 'INTEGER DEFAULT 1'),
+        ('ewallet_balance', 'DECIMAL DEFAULT 0'),
+        ('signup_bonus_claimed', 'BOOLEAN DEFAULT 0')
+    ]
     
-    try:
-        cursor.execute('ALTER TABLE users ADD COLUMN premium_end_date DATE')
-    except sqlite3.OperationalError:
-        pass
-    
-    try:
-        cursor.execute('ALTER TABLE users ADD COLUMN total_earnings DECIMAL DEFAULT 0')
-    except sqlite3.OperationalError:
-        pass
-    
-    try:
-        cursor.execute('ALTER TABLE users ADD COLUMN commission_level INTEGER DEFAULT 1')
-    except sqlite3.OperationalError:
-        pass
-    
-    try:
-        cursor.execute('ALTER TABLE users ADD COLUMN ewallet_balance DECIMAL DEFAULT 0')
-    except sqlite3.OperationalError:
-        pass
-    
-    try:
-        cursor.execute('ALTER TABLE users ADD COLUMN signup_bonus_claimed BOOLEAN DEFAULT 0')
-    except sqlite3.OperationalError:
-        pass
+    for column_name, column_def in columns_to_add:
+        if column_name not in existing_columns:
+            try:
+                cursor.execute(f'ALTER TABLE users ADD COLUMN {column_name} {column_def}')
+                print(f"Added column: {column_name}")
+            except sqlite3.OperationalError as e:
+                print(f"Error adding column {column_name}: {e}")
     
     conn.commit()
     conn.close()

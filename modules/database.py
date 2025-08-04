@@ -13,6 +13,12 @@ def initialize_databases():
     # Initialize SQLite database for users
     initialize_user_database()
     
+    # Initialize premium system after user database
+    from modules.premium_system import initialize_premium_db
+    from modules.profile_management import initialize_profile_db
+    initialize_premium_db()
+    initialize_profile_db()
+    
     # Initialize CSV file structures
     initialize_csv_files()
 
