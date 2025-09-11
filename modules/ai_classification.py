@@ -4,7 +4,7 @@ import pandas as pd
 from PIL import Image
 import os
 import datetime
-# import tensorflow as tf
+import tensorflow as tf
 from io import BytesIO
 
 # --- Assuming these modules exist in your project structure ---
