@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from modules.auth import handle_authentication
 from modules.breeding_management import breeding_management_app
-# from modules.ai_classification import ai_classification_app
+from modules.ai_classification import ai_classification_app
 from modules.point_of_sale import point_of_sale_app
 from modules.sales_tracking import sales_tracking_app
 from modules.booking_system import booking_system_app
@@ -14,7 +14,7 @@ from modules.email_notifications import email_notifications_app
 from modules.landing_page import enhanced_landing_page
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
-
+# from modules.ai_classification import ai_classification_app
 
 # Page configuration
 
@@ -106,8 +106,8 @@ def main():
         email_notifications_app()
     elif app_key == "breeding":
         breeding_management_app()
-    # elif app_key == "ai_classification":
-    #     ai_classification_app()
+    elif app_key == "ai_classification":
+        ai_classification_app()
     elif app_key == "pos":
         point_of_sale_app()
     elif app_key == "sales_tracking":

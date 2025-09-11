@@ -35,7 +35,6 @@ CLASSIFICATION_CSV = 'ai_classifications.csv'
 
 @st.cache_resource
 def load_model(model_name):
-    import tensorflow as tf
     """Load a TensorFlow model and cache it to prevent re-loading."""
     model_path = os.path.join(MODEL_DIR, model_name)
     if not os.path.exists(model_path):
