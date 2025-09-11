@@ -526,10 +526,11 @@ class ButterflyApp:
         st.subheader("📊 Recent Classifications")
         classifications_df = load_from_csv(CLASSIFICATION_CSV)
         
+        
         if not classifications_df.empty:
             recent_classifications = classifications_df.tail(10).sort_values('timestamp', ascending=False)
             st.dataframe(recent_classifications, use_container_width=True)
-            
+
             st.write("**Classification Statistics:**")
             col1, col2, col3, col4, col5, col6 = st.columns(6)
             with col1:
@@ -538,21 +539,20 @@ class ButterflyApp:
                 if 'predicted_species' in classifications_df.columns:
                     st.metric("Species Identified", classifications_df['predicted_species'].nunique())
             with col3:
-                if 'predicted_stages' in classifications_df.columns:
-                    st.metric("Life Stages Identified", classifications_df['predicted_stages'].nunique())
+                if 'predicted_stage' in classifications_df.columns:
+                    st.metric("Life Stages Identified", classifications_df['predicted_stage'].nunique())
             with col4:
-                if 'predicted_diseases' in classifications_df.columns:
-                    st.metric("Larval Diseases Identified", classifications_df['predicted_diseases'].nunique())
+                if 'predicted_disease' in classifications_df.columns:
+                    st.metric("Larval Diseases Identified", classifications_df['predicted_disease'].nunique())
             with col5:
-                if 'predicted_defects' in classifications_df.columns:
-                    st.metric("Pupae Defects Identified", classifications_df['predicted_defects'].nunique())
+                if 'predicted_defect' in classifications_df.columns:
+                    st.metric("Pupae Defects Identified", classifications_df['predicted_defect'].nunique())
             with col6:
                 today = datetime.date.today().strftime('%Y-%m-%d')
-                today_classifications = len(classifications_df[classifications_df['timestamp'].str.startswith(today)])
+                today_classifications = len(classifications_df[classifications_df['timestamp'].astype(str).str.startswith(today)])
                 st.metric("Today's Classifications", today_classifications)
         else:
             st.info("No classifications performed yet. Upload an image to get started!")
- 
     # def _display_recent_classifications(self):
     #     """Display recent classification results from the CSV file."""
     #     st.subheader("📊 Recent Classifications")

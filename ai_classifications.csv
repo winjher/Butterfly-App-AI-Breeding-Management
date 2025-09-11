@@ -1,46 +1,51 @@
 timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stage,stage_confidence,predicted_disease,disease_confidence,predicted_defect,defect_confidence,predicted_class,confidence,method,model_used
-2025-07-28 03:05:56,Species Identification,jerwin,Butterfly-Clippers,0.9563799119614896,,,,,,,,,,
-2025-07-28 03:50:05,Lifecycle Stage,jerwin,Pupae,0.9289526844470476,,,,,,,,,,
-2025-07-28 04:14:20,Complete Analysis (All Models),eric,Butterfly-Tailed Jay,0.8894933792916009,Eggs,0.9414944652127124,Nucleopolyhedrosis,0.7079365537575126,Deformed body,0.8832724480031751,,,,
-2025-07-28 04:17:24,Species Identification,eric,Moth-Atlas,0.9696742620879816,,,,,,,,,,
-2025-08-02 09:11:21,Complete Analysis (All Models),admin,Butterfly-Emerald Swallowtail,0.8795377702805264,Pupae,0.8201825153922885,Gnathostomiasis,0.7970243525776469,Overbend,0.8556075770748914,,,,
-2025-08-02 09:12:09,Species Identification,admin,Butterfly-Paper Kite,0.8586885943666126,,,,,,,,,,
-2025-08-02 09:12:43,Species Identification,admin,Butterfly-Gray Glassy Tiger,0.7903099135120388,,,,,,,,,,
-2025-08-02 09:17:02,Lifecycle Stage,admin,Larvae,0.9226775606485538,,,,,,,,,,
-2025-08-02 09:30:03,Pupae Defect Analysis,rob,Old Pupa,0.8948999331076943,,,,,,,,,,
-2025-08-03 03:48:34,Lifecycle Stage,che,Eggs,0.8621965361577826,,,,,,,,,,
-2025-08-03 03:49:18,Species Identification,che,Butterfly-Gray Glassy Tiger,0.8962214568820474,,,,,,,,,,
-2025-08-03 03:51:18,Species Identification,che,Butterfly-Red Lacewing,0.7707354847585843,,,,,,,,,,
-2025-08-03 03:51:55,Lifecycle Stage,che,Butterfly,0.9393800295926956,,,,,,,,,,
-2025-08-03 03:54:06,Species Identification,che,Butterfly-Emerald Swallowtail,0.8487749360092265,,,,,,,,,,
-2025-09-10 09:44:17,Species Identification,eric,Butterfly-Common Lime,0.9697803175004248,,,,,,,,,,
-2025-09-10 09:46:43,species,eric,,,,,,,,,Butterfly-Pink Rose,0.7770222142576687,Simulation (Model unavailable),model_Butterfly_Species.h5
-2025-09-10 09:55:04,Pupae Defect Analysis,che,Deformed body,0.8715019901033854
-2025-09-10 10:40:25,Larval Disease Detection,Joan,Healthy,0.8775915093758162
-2025-09-10 10:40:43,Larval Disease Detection,Joan,Nucleopolyhedrosis,0.7954761625801156
-2025-09-10 10:40:53,Larval Disease Detection,Joan,Gnathostomiasis,0.7918724643308538
-2025-09-10 15:56:42,Species Identification,eric,Butterfly-Pink Rose,0.9406434369549734
-2025-09-10 15:58:56,Species Identification,eric,Butterfly-Common Mime,0.8783679311830139
-2025-09-10 16:15:17,Species Identification,eric,Butterfly-Common Lime,0.9994077682495117
-2025-09-10 16:36:38,Pupae Defect Analysis,Hei,Overbend,0.6054314970970154
-2025-09-10 16:37:35,Pupae Defect Analysis,Hei,Healthy Pupae,0.9418954849243164
-2025-09-10 16:39:20,Species Identification,Hei,Butterfly-Tailed Jay,0.5327416062355042
-2025-09-10 16:40:01,Species Identification,Hei,Butterfly-Emerald Swallowtail,0.9998332262039185
-2025-09-10 16:41:17,Species Identification,Hei,Butterfly-Scarlet Mormon,0.33942967653274536
-2025-09-10 16:41:35,Species Identification,Hei,Butterfly-Emerald Swallowtail,0.999863862991333
-2025-09-10 16:41:55,Species Identification,Hei,Butterfly-Common Mime,0.9850382208824158
-2025-09-10 16:43:37,Species Identification,Hei,Butterfly-Common Mime,0.9988693594932556
-2025-09-10 16:43:55,Species Identification,Hei,Butterfly-Gray Glassy Tiger,0.9993218183517456
-2025-09-10 16:51:17,Larval Disease Detection,Hei,Nucleopolyhedrosis,0.8308053016662598
-2025-09-10 17:02:00,Larval Disease Detection,Joan,Nucleopolyhedrosis,0.6733242869377136
-2025-09-10 17:02:35,Larval Disease Detection,Joan,Nucleopolyhedrosis,0.9395326375961304
-2025-09-10 17:03:11,Lifecycle Stage,Joan,Larvae,0.9564922451972961
-2025-09-11 08:50:23,Larval Disease Detection,Joan,Nucleopolyhedrosis,0.6733242869377136
-2025-09-11 08:51:34,Lifecycle Stage,Joan,Butterfly,0.9539225697517395
-2025-09-11 08:52:12,Lifecycle Stage,Joan,Butterfly,0.5538913607597351
-2025-09-11 08:52:46,Lifecycle Stage,Joan,Butterfly,0.9999485015869141
-2025-09-11 08:53:37,Larval Disease Detection,Joan,Anaphylaxis Infection,0.9972027540206909
-2025-09-11 09:34:45,Pupae Defect Analysis,rob,Old Pupa,0.9018736481666565
-2025-09-11 09:36:15,Complete Analysis (All Models),rob,Butterfly-Golden Birdwing,0.8450955152511597,Pupae,0.9715239405632019,Healthy,0.9451049566268921,Old Pupa,0.9018736481666565
-2025-09-11 10:02:50,Lifecycle Stage,rob,Pupae,0.9848930835723877
-2025-09-11 10:11:16,Larval Disease Detection,rob,,,,,Healthy,0.4763765335083008,,
+28/07/2025 3:05,Species Identification,jerwin,Butterfly-Clippers,0.956379912,,,,,,,,,,
+28/07/2025 3:50,Lifecycle Stage,jerwin,,,Pupae,0.928952684,,,,,,,,
+28/07/2025 4:14,Complete Analysis (All Models),eric,Butterfly-Tailed Jay,0.889493379,Eggs,0.941494465,Nucleopolyhedrosis,0.707936554,Deformed body,0.883272448,,,,
+28/07/2025 4:17,Species Identification,eric,Moth-Atlas,0.969674262,,,,,,,,,,
+02/08/2025 9:11,Complete Analysis (All Models),admin,Butterfly-Emerald Swallowtail,0.87953777,Pupae,0.820182515,Gnathostomiasis,0.797024353,Overbend,0.855607577,,,,
+02/08/2025 9:12,Species Identification,admin,Butterfly-Paper Kite,0.858688594,,,,,,,,,,
+02/08/2025 9:12,Species Identification,admin,Butterfly-Gray Glassy Tiger,0.790309914,,,,,,,,,,
+02/08/2025 9:17,Lifecycle Stage,admin,,,Larvae,0.922677561,,,,,,,,
+02/08/2025 9:30,Pupae Defect Analysis,rob,,,,,,,Old Pupa,0.894899933,,,,
+03/08/2025 3:48,Lifecycle Stage,che,,,Eggs,0.862196536,,,,,,,,
+03/08/2025 3:49,Species Identification,che,Butterfly-Gray Glassy Tiger,0.896221457,,,,,,,,,,
+03/08/2025 3:51,Species Identification,che,Butterfly-Red Lacewing,0.770735485,,,,,,,,,,
+03/08/2025 3:51,Lifecycle Stage,che,,,Butterfly,0.93938003,,,,,,,,
+03/08/2025 3:54,Species Identification,che,Butterfly-Emerald Swallowtail,0.848774936,,,,,,,,,,
+10/09/2025 9:44,Species Identification,eric,Butterfly-Common Lime,0.969780318,,,,,,,,,,
+10/09/2025 9:46,species,eric,Butterfly-Pink Rose,0.777022214,,,,,,,,,,model_Butterfly_Species.h5
+10/09/2025 9:55,Pupae Defect Analysis,che,,,,,,,Deformed body,0.87150199,,,,
+10/09/2025 10:40,Larval Disease Detection,Joan,,,,,Healthy,0.877591509,,,,,,
+10/09/2025 10:40,Larval Disease Detection,Joan,,,,,Nucleopolyhedrosis,0.795476163,,,,,,
+10/09/2025 10:40,Larval Disease Detection,Joan,,,,,Gnathostomiasis,0.791872464,,,,,,
+10/09/2025 15:56,Species Identification,eric,Butterfly-Pink Rose,0.940643437,,,,,,,,,,
+10/09/2025 15:58,Species Identification,eric,Butterfly-Common Mime,0.878367931,,,,,,,,,,
+10/09/2025 16:15,Species Identification,eric,Butterfly-Common Lime,0.999407768,,,,,,,,,,
+10/09/2025 16:36,Pupae Defect Analysis,Hei,,,,,,,Overbend,0.605431497,,,,
+10/09/2025 16:37,Pupae Defect Analysis,Hei,,,,,,,Healthy Pupae,0.941895485,,,,
+10/09/2025 16:39,Species Identification,Hei,Butterfly-Tailed Jay,0.532741606,,,,,,,,,,
+10/09/2025 16:40,Species Identification,Hei,Butterfly-Emerald Swallowtail,0.999833226,,,,,,,,,,
+10/09/2025 16:41,Species Identification,Hei,Butterfly-Scarlet Mormon,0.339429677,,,,,,,,,,
+10/09/2025 16:41,Species Identification,Hei,Butterfly-Emerald Swallowtail,0.999863863,,,,,,,,,,
+10/09/2025 16:41,Species Identification,Hei,Butterfly-Common Mime,0.985038221,,,,,,,,,,
+10/09/2025 16:43,Species Identification,Hei,Butterfly-Common Mime,0.998869359,,,,,,,,,,
+10/09/2025 16:43,Species Identification,Hei,Butterfly-Gray Glassy Tiger,0.999321818,,,,,,,,,,
+10/09/2025 16:51,Larval Disease Detection,Hei,,,,,Nucleopolyhedrosis,0.830805302,,,,,,
+10/09/2025 17:02,Larval Disease Detection,Joan,,,,,Nucleopolyhedrosis,0.673324287,,,,,,
+10/09/2025 17:02,Larval Disease Detection,Joan,,,,,Nucleopolyhedrosis,0.939532638,,,,,,
+10/09/2025 17:03,Lifecycle Stage,Joan,,,Larvae,0.956492245,,,,,,,,
+11/09/2025 8:50,Larval Disease Detection,Joan,,,,,Nucleopolyhedrosis,0.673324287,,,,,,
+11/09/2025 8:51,Lifecycle Stage,Joan,,,Butterfly,0.95392257,,,,,,,,
+11/09/2025 8:52,Lifecycle Stage,Joan,,,Butterfly,0.553891361,,,,,,,,
+11/09/2025 8:52,Lifecycle Stage,Joan,,,Butterfly,0.999948502,,,,,,,,
+11/09/2025 8:53,Larval Disease Detection,Joan,,,,,Anaphylaxis Infection,0.997202754,,,,,,
+11/09/2025 9:34,Pupae Defect Analysis,rob,,,,,,,Old Pupa,0.901873648,,,,
+11/09/2025 9:36,Complete Analysis (All Models),rob,Butterfly-Golden Birdwing,0.845095515,Pupae,0.971523941,Healthy,0.945104957,Old Pupa,0.901873648,,,,
+11/09/2025 10:02,Lifecycle Stage,rob,,,Pupae,0.984893084,,,,,,,,
+11/09/2025 10:11,Larval Disease Detection,rob,,,,,Healthy,0.476376534,,,,,,
+11/09/2025 11:07,Larval Disease Detection,Joan,,,,,Healthy,0.998368442,,,,,,
+11/09/2025 11:09,Larval Disease Detection,Joan,,,,,Healthy,0.975163817,,,,,,
+2025-09-11 11:22:46,Complete Analysis (All Models),Joan,Butterfly-Tailed Jay,0.30994656682014465,Butterfly,0.9999810457229614,Gnathostomiasis,0.9901561737060547,Old Pupa,0.8576661348342896
+2025-09-11 11:24:18,Larval Disease Detection,Joan,,,,,Gnathostomiasis,0.9901561737060547,,
+2025-09-11 11:24:40,Lifecycle Stage,Joan,,,Butterfly,0.9999810457229614,,,,
