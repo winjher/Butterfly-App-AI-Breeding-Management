@@ -457,11 +457,15 @@ class ButterflyApp:
             'timestamp': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'analysis_type': st.session_state.analysis_type,
             'user': st.session_state.username,
-            # 'image_size': st.session_state.image.size if st.session_state.image else None,
-            # 'image_mode': st.session_state.image.mode if st.session_state.image else None,
-            # 'models_used': ', '.join([key for key, model in self._models.items() if model is not None]),
-            # 'plant': ''.join(SPECIES_HOST_PLANTS).get(results.get("species", {}).get("predicted_class"), [])
-        }
+            'predicted_species': results.get("species", {}).get("predicted_class", ""),
+            'species_confidence': results.get("species", {}).get("confidence", ""),
+            'predicted_stage': results.get("lifecycle", {}).get("predicted_class", ""),
+            'stage_confidence': results.get("lifecycle", {}).get("confidence", ""),
+            'predicted_disease': results.get("diseases", {}).get("predicted_class", ""),
+            'disease_confidence': results.get("diseases", {}).get("confidence", ""),
+            'predicted_defect': results.get("defects", {}).get("predicted_class", ""),
+            'defect_confidence': results.get("defects", {}).get("confidence", ""),
+         }
         
         if "species" in results:
             analysis_data.update({

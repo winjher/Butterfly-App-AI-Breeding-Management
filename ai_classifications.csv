@@ -42,3 +42,5 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-09-11 08:53:37,Larval Disease Detection,Joan,Anaphylaxis Infection,0.9972027540206909
 2025-09-11 09:34:45,Pupae Defect Analysis,rob,Old Pupa,0.9018736481666565
 2025-09-11 09:36:15,Complete Analysis (All Models),rob,Butterfly-Golden Birdwing,0.8450955152511597,Pupae,0.9715239405632019,Healthy,0.9451049566268921,Old Pupa,0.9018736481666565
+2025-09-11 10:02:50,Lifecycle Stage,rob,Pupae,0.9848930835723877
+2025-09-11 10:11:16,Larval Disease Detection,rob,,,,,Healthy,0.4763765335083008,,
