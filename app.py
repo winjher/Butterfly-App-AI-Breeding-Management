@@ -14,7 +14,7 @@ from modules.email_notifications import email_notifications_app
 from modules.landing_page import enhanced_landing_page
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
-from modules.ai_classification import ai_classification_app
+# from modules.ai_classification import ai_classification_app
 
 # Page configuration
 

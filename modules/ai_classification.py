@@ -17,21 +17,21 @@ IMAGE_SIZE = (180, 180)
 CLASSIFICATION_CSV = 'ai_classifications.csv'
 
 # --- Model Loading with Caching ---
-import streamlit as st
-import os
+# import streamlit as st
+# import os
 
-@st.cache_resource
-def load_model_safe(MODEL_DIR, model_name):
-    import tensorflow as tf
-    try:
-        model_path = os.path.join(MODEL_DIR, model_name)
-        if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Model file not found: {model_path}")
-        model = tf.keras.models.load_model(model_path)
-        return model
-    except Exception as e:
-        st.error(f"❌ Failed to load model: {e}")
-        return None
+# @st.cache_resource
+# def load_model_safe(MODEL_DIR, model_name):
+#     import tensorflow as tf
+#     try:
+#         model_path = os.path.join(MODEL_DIR, model_name)
+#         if not os.path.exists(model_path):
+#             raise FileNotFoundError(f"Model file not found: {model_path}")
+#         model = tf.keras.models.load_model(model_path)
+#         return model
+#     except Exception as e:
+#         st.error(f"❌ Failed to load model: {e}")
+#         return None
 
 @st.cache_resource
 def load_model(model_name):
