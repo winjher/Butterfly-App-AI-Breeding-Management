@@ -1,0 +1,9 @@
+order_id,username,species,quantity,unit_price,total_amount,delivery_option,payment_method,delivery_address,special_instructions,status,purchase_date
+ORD-20250910102802,Joan,Butterfly-Common Lime,8,150,1200,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:02
+ORD-20250910102802,Joan,Butterfly-Common Mormon,8,200,1600,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:02
+ORD-20250910102802,Joan,Butterfly-Paper Kite,11,180,1980,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:02
+ORD-20250910102802,Joan,Butterfly-Emerald Swallowtail,7,300,2100,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:03
+ORD-20250910102802,Joan,Butterfly-Golden Birdwing,3,500,1500,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:03
+ORD-20250910102802,Joan,Butterfly-Plain Tiger,7,120,840,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:03
+ORD-20250910102802,Joan,Moth-Atlas,6,250,1500,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:03
+ORD-20250910102802,Joan,Butterfly-Red Lacewing,6,220,1320,Standard (5-7 days),Cash on Delivery,Boac,Sa bayan ng Boac tayo magmeet malapit sa Puregold ,Pending,2025-09-10 10:28:03

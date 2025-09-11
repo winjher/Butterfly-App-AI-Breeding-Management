@@ -9,6 +9,7 @@ import datetime
 import streamlit as st
 from typing import Dict, List, Any, Optional
 
+
 def save_to_csv(filename: str, data: Dict[str, Any], append: bool = True) -> bool:
     """
     Save data to CSV file

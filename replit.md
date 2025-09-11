@@ -149,3 +149,42 @@ The application follows a modular Streamlit architecture with the following key 
 - Image processing pipeline can be offloaded to separate microservice if needed
 
 The application prioritizes ease of deployment and maintenance while providing comprehensive business functionality for butterfly breeding operations.
+
+
+modules = ["python-3.11", "web"]
+
+[nix]
+channel = "stable-25_05"
+packages = ["cargo", "freetype", "glibcLocales", "lcms2", "libiconv", "libimagequant", "libjpeg", "libtiff", "libwebp", "libxcrypt", "openjpeg", "rustc", "tcl", "tk", "zlib"]
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["streamlit", "run", "app.py", "--server.port", "5000"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Streamlit Server"
+
+[[workflows.workflow]]
+name = "Streamlit Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "streamlit run app.py --server.port 5000"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[agent]
+integrations = ["python_sendgrid==1.0.0"]

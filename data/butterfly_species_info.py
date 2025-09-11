@@ -204,6 +204,7 @@ BUTTERFLY_SPECIES_INFO = {
         "distribution": "Asia, introduced to North America"
     }
 }
+butterfly_species_names = list(BUTTERFLY_SPECIES_INFO.keys())
 
 # Host plants and feeding requirements for each species
 SPECIES_HOST_PLANTS = {
@@ -280,6 +281,7 @@ SPECIES_HOST_PLANTS = {
         'dailyConsumption': 190
     }
 }
+hosplants_names = list(SPECIES_HOST_PLANTS.keys())
 
 # Lifecycle stage information
 LIFESTAGES_INFO = {
@@ -308,6 +310,7 @@ LIFESTAGES_INFO = {
         "care_requirements": "Stable temperature, proper humidity, minimal disturbance"
     }
 }
+lifestages_names = list(LIFESTAGES_INFO.keys())
 
 # Pupae defect information and quality assessment
 PUPAE_DEFECTS_INFO = {
@@ -348,6 +351,7 @@ PUPAE_DEFECTS_INFO = {
         "prevention": "Maintain proper environmental conditions, avoid stress factors"
     }
 }
+pupaedefects_names = list(PUPAE_DEFECTS_INFO.keys())
 
 # Larval disease information and treatment protocols
 LARVAL_DISEASES_INFO = {
@@ -380,7 +384,7 @@ LARVAL_DISEASES_INFO = {
         "prevention": "Strict quarantine, disinfection protocols, avoid overcrowding"
     }
 }
-
+larvaldiseases_names = list(LARVAL_DISEASES_INFO.keys())
 # Breeding difficulty and success rates
 BREEDING_DIFFICULTY = {
     "Butterfly-Clippers": {"difficulty": "Medium", "success_rate": 75},
@@ -429,26 +433,26 @@ ENVIRONMENTAL_REQUIREMENTS = {
 def get_species_info(species_name):
     """
     Get detailed information about a specific butterfly species
-    
+
     Args:
         species_name (str): Name of the butterfly species
-        
+
     Returns:
         dict: Complete information about the species
     """
     if species_name not in BUTTERFLY_SPECIES_INFO:
         return None
-    
+
     info = BUTTERFLY_SPECIES_INFO[species_name].copy()
-    
+
     # Add host plant information
     if species_name in SPECIES_HOST_PLANTS:
         info['host_plants'] = SPECIES_HOST_PLANTS[species_name]
-    
+
     # Add breeding difficulty
     if species_name in BREEDING_DIFFICULTY:
         info['breeding_info'] = BREEDING_DIFFICULTY[species_name]
-    
+
     return info
 
 def get_all_species_names():
@@ -458,10 +462,10 @@ def get_all_species_names():
 def get_species_by_family(family_name):
     """
     Get all species belonging to a specific family
-    
+
     Args:
         family_name (str): Name of the butterfly family
-        
+
     Returns:
         list: List of species names in the family
     """
@@ -476,26 +480,26 @@ def get_conservation_status_summary():
     for species, info in BUTTERFLY_SPECIES_INFO.items():
         status = info['conservation_status']
         status_counts[status] = status_counts.get(status, 0) + 1
-    
+
     return status_counts
 
 def calculate_feeding_requirements(species_name, larva_count):
     """
     Calculate daily feeding requirements for a batch
-    
+
     Args:
         species_name (str): Name of the butterfly species
         larva_count (int): Number of larvae
-        
+
     Returns:
         dict: Feeding requirements information
     """
     if species_name not in SPECIES_HOST_PLANTS:
         return None
-    
+
     daily_per_larva = SPECIES_HOST_PLANTS[species_name]['dailyConsumption']
     total_daily = daily_per_larva * larva_count
-    
+
     return {
         'species': species_name,
         'larva_count': larva_count,

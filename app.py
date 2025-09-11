@@ -14,13 +14,19 @@ from modules.email_notifications import email_notifications_app
 from modules.landing_page import enhanced_landing_page
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
+from modules.ai_classification import ai_classification_app
 
 # Page configuration
-st.set_page_config(
-    page_title="🦋 Butterfly Breeding Ecosystem",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+
+
+# ADD this as the very first Streamlit command:
+st.set_page_config(page_title="AI Butterfly Classification", page_icon="🦋", layout="wide")
+
+# st.set_page_config(
+#     page_title="🦋 Butterfly Breeding Ecosystem",
+#     layout="wide",
+#     initial_sidebar_state="expanded"
+# )
 
 # Initialize databases and directories
 initialize_databases()
@@ -34,15 +40,15 @@ except:
 
 def main():
     """Main application entry point"""
-    
+
     # Handle authentication
     if not handle_authentication():
         return
-    
+
     # Main navigation
     st.sidebar.title("🦋 Butterfly Ecosystem")
     st.sidebar.write(f"Welcome, **{st.session_state.username}**!")
-    
+
     # Navigation menu with role-based access
     apps = {
         "🏠 Dashboard": "dashboard",
@@ -54,19 +60,19 @@ def main():
         "📊 Sales Tracking": "sales_tracking",
         "🌍 Farm Booking": "booking"
     }
-    
+
     # Add admin-only features
     if st.session_state.get('user_role') == 'admin':
         apps["🔧 Premium Admin"] = "premium_admin"
         apps["📧 Email Notifications"] = "email_notifications"
-    
+
     # Add role-specific dashboards
     if st.session_state.get('user_role') == 'student':
         apps["🎓 Student Dashboard"] = "student_dashboard"
-    
+
     if st.session_state.get('user_role') == 'purchaser':
         apps["🛒 Purchaser Profile"] = "purchaser_profile"
-    
+
     # Role-based feature highlighting
     if st.session_state.get('user_role') in ['breeder', 'faculty']:
         st.sidebar.info("🔬 You have access to advanced breeding features")
@@ -76,18 +82,18 @@ def main():
         st.sidebar.success("📚 Student Dashboard with TESDA modules available")
     elif st.session_state.get('user_role') == 'enthusiast/tourist':
         st.sidebar.info("🦋 Tourism and booking features optimized for you")
-    
+
     selected_app = st.sidebar.selectbox("Select Application", list(apps.keys()))
-    
+
     # Logout button
     if st.sidebar.button("🚪 Logout"):
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
-    
+
     # Route to selected application
     app_key = apps[selected_app]
-    
+
     if app_key == "dashboard":
         dashboard_app()
     elif app_key == "profile":
@@ -115,7 +121,7 @@ def main():
 
 def dashboard_app():
     """Dashboard overview of the entire ecosystem"""
-    
+
     # Show enhanced landing page with signup bonus
     enhanced_landing_page()
 
