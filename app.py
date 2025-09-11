@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from modules.auth import handle_authentication
 from modules.breeding_management import breeding_management_app
-# from modules.ai_classification import ai_classification_app
+from modules.ai_classification import ai_classification_app
 from modules.point_of_sale import point_of_sale_app
 from modules.sales_tracking import sales_tracking_app
 from modules.booking_system import booking_system_app
