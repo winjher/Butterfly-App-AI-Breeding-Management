@@ -4,7 +4,7 @@ import pandas as pd
 from PIL import Image
 import os
 import datetime
-#import tensorflow as tf #remove if error
+import tensorflow as tf
 from io import BytesIO
 
 # --- Assuming these modules exist in your project structure ---
@@ -35,13 +35,7 @@ CLASSIFICATION_CSV = 'ai_classifications.csv'
 
 @st.cache_resource
 def load_model(model_name):
-    try:
-        import tensorflow as tf
-    except ModuleNotFoundError:
-        import streamlit as st
-    st.error("TensorFlow is missing. Please check your dependency file.")
-
-    # import tensorflow as tf
+    import tensorflow as tf
     """Load a TensorFlow model and cache it to prevent re-loading."""
     model_path = os.path.join(MODEL_DIR, model_name)
     if not os.path.exists(model_path):
