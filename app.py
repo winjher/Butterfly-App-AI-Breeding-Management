@@ -106,8 +106,8 @@ def main():
         email_notifications_app()
     elif app_key == "breeding":
         breeding_management_app()
-    elif app_key == "ai_classification":
-        ai_classification_app()
+    # elif app_key == "ai_classification":
+    #     ai_classification_app()
     elif app_key == "pos":
         point_of_sale_app()
     elif app_key == "sales_tracking":
