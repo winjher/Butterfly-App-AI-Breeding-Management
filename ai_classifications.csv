@@ -49,3 +49,28 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-09-11 11:22:46,Complete Analysis (All Models),Joan,Butterfly-Tailed Jay,0.30994656682014465,Butterfly,0.9999810457229614,Gnathostomiasis,0.9901561737060547,Old Pupa,0.8576661348342896
 2025-09-11 11:24:18,Larval Disease Detection,Joan,,,,,Gnathostomiasis,0.9901561737060547,,
 2025-09-11 11:24:40,Lifecycle Stage,Joan,,,Butterfly,0.9999810457229614,,,,
+2025-09-12 16:45:14,Lifecycle Stage,rob,,,Butterfly,0.6538521647453308,,,,
+2025-09-12 16:56:08,Lifecycle Stage,rob,,,Butterfly,0.8053280115127563,,,,
+2025-09-12 16:57:07,Lifecycle Stage,rob,,,Larvae,0.9993841648101807,,,,
+2025-09-12 16:57:52,Lifecycle Stage,rob,,,Larvae,0.9993841648101807,,,,
+2025-09-12 16:58:17,Lifecycle Stage,rob,,,Larvae,0.5771427154541016,,,,
+2025-09-12 16:58:36,Lifecycle Stage,rob,,,Butterfly,0.9806408882141113,,,,
+2025-09-12 17:00:08,Lifecycle Stage,rob,,,Butterfly,0.9806408882141113,,,,
+2025-09-12 17:03:46,Lifecycle Stage,rob,,,Butterfly,0.6538521647453308,,,,
+2025-09-16 11:32:26,Lifecycle Stage,Joan,,,Butterfly,0.8901047706604004,,,,
+2025-09-16 11:33:27,Larval Disease Detection,Joan,,,,,Gnathostomiasis,0.9934796094894409,,
+2025-09-16 12:10:36,Lifecycle Stage,eric,,,Butterfly,0.8901047706604004,,,,
+2025-09-16 12:26:00,Lifecycle Stage,eric,,,Butterfly,0.9995926022529602,,,,
+2025-09-16 12:26:17,Larval Disease Detection,eric,,,,,Healthy,0.4763765335083008,,
+2025-09-16 12:26:33,Larval Disease Detection,eric,,,,,Healthy,0.9751638174057007,,
+2025-09-16 12:27:01,Lifecycle Stage,eric,,,Pupae,0.9815652966499329,,,,
+2025-09-16 13:13:11,Lifecycle Stage,eric,,,Pupae,0.9815652966499329,,,,
+2025-09-16 13:13:35,Larval Disease Detection,eric,,,,,Healthy,0.9063011407852173,,
+2025-09-16 13:24:44,Pupae Defect Analysis,eric,,,,,,,Deformed body,0.9467476010322571
+2025-09-16 13:31:57,Lifecycle Stage,eric,,,Pupae,0.9966269731521606,,,,
+2025-09-16 13:36:30,Pupae Defect Analysis,rob,,,,,,,Deformed body,0.4454571306705475
+2025-09-16 13:37:18,Lifecycle Stage,rob,,,Pupae,0.7692594528198242,,,,
+2025-09-16 13:37:58,Lifecycle Stage,rob,,,Pupae,0.9771537780761719,,,,
+2025-09-16 13:38:32,Pupae Defect Analysis,rob,,,,,,,Ant bites,1.0
+2025-09-16 13:40:14,Species Identification,rob,Butterfly-Gray Glassy Tiger,0.9993218183517456,,,,,,
+2025-09-16 13:40:35,Lifecycle Stage,rob,,,Butterfly,0.9999994039535522,,,,

@@ -525,43 +525,49 @@ class ButterflyApp:
         """Display recent classification results from the CSV file."""
         st.subheader("📊 Recent Classifications")
         classifications_df = load_from_csv(CLASSIFICATION_CSV)
-        
-        
+
         if not classifications_df.empty:
             recent_classifications = classifications_df.tail(10).sort_values('timestamp', ascending=False)
             st.dataframe(recent_classifications, use_container_width=True)
 
             st.write("**Classification Statistics:**")
             col1, col2, col3, col4, col5, col6 = st.columns(6)
+            
             with col1:
                 st.metric("Total Classifications", len(classifications_df))
             with col2:
-                if 'predicted_species' in classifications_df.columns:
-                    st.metric("Species Identified", classifications_df['predicted_species'].nunique())
+                # Count non-empty species classifications
+                species_count = classifications_df['predicted_species'].notna().sum()
+                st.metric("Species Identified", species_count)
             with col3:
-                if 'predicted_stage' in classifications_df.columns:
-                    st.metric("Life Stages Identified", classifications_df['predicted_stage'].nunique())
+                # Count non-empty life stage classifications
+                stage_count = classifications_df['predicted_stage'].notna().sum()
+                st.metric("Life Stages Classified", stage_count)
             with col4:
-                if 'predicted_disease' in classifications_df.columns:
-                    st.metric("Larval Diseases Identified", classifications_df['predicted_disease'].nunique())
+                # Count non-empty larval disease classifications
+                disease_count = classifications_df['predicted_disease'].notna().sum()
+                st.metric("Larval Diseases Classified", disease_count)
             with col5:
-                if 'predicted_defect' in classifications_df.columns:
-                    st.metric("Pupae Defects Identified", classifications_df['predicted_defect'].nunique())
+                # Count non-empty pupae defect classifications
+                defect_count = classifications_df['predicted_defect'].notna().sum()
+                st.metric("Pupae Defects Classified", defect_count)
             with col6:
                 today = datetime.date.today().strftime('%Y-%m-%d')
                 today_classifications = len(classifications_df[classifications_df['timestamp'].astype(str).str.startswith(today)])
                 st.metric("Today's Classifications", today_classifications)
         else:
             st.info("No classifications performed yet. Upload an image to get started!")
+
     # def _display_recent_classifications(self):
     #     """Display recent classification results from the CSV file."""
     #     st.subheader("📊 Recent Classifications")
     #     classifications_df = load_from_csv(CLASSIFICATION_CSV)
         
+        
     #     if not classifications_df.empty:
     #         recent_classifications = classifications_df.tail(10).sort_values('timestamp', ascending=False)
     #         st.dataframe(recent_classifications, use_container_width=True)
-            
+
     #         st.write("**Classification Statistics:**")
     #         col1, col2, col3, col4, col5, col6 = st.columns(6)
     #         with col1:
@@ -570,23 +576,21 @@ class ButterflyApp:
     #             if 'predicted_species' in classifications_df.columns:
     #                 st.metric("Species Identified", classifications_df['predicted_species'].nunique())
     #         with col3:
-    #             if 'life_stages' in classifications_df.columns:
-    #                 st.metric("Life Stages Identified", classifications_df['life_stages'].nunique())
+    #             if 'predicted_stage' in classifications_df.columns:
+    #                 st.metric("Life Stages Identified", classifications_df['predicted_stage'].nunique())
     #         with col4:
-    #             if 'larval_diseases' in classifications_df.columns:
-    #                 st.metric("Larval Diseases Identified", classifications_df['larval_diseases'].nunique())
+    #             if 'predicted_disease' in classifications_df.columns:
+    #                 #st.metric("Larval Diseases Identified", classifications_df['predicted_disease'].nunique())
+    #                 st.metric("Larval Diseases Identified", classifications_df['predicted_disease'].nunique())
     #         with col5:
-    #             if 'pupae_defects' in classifications_df.columns:
-    #                 st.metric("Pupae Defects Identified", classifications_df['pupae_defects'].nunique())
+    #             if 'predicted_defect' in classifications_df.columns:
+    #                 st.metric("Pupae Defects Identified", classifications_df['predicted_defect'].nunique())
     #         with col6:
     #             today = datetime.date.today().strftime('%Y-%m-%d')
-    #             today_classifications = len(classifications_df[classifications_df['timestamp'].str.startswith(today)])
+    #             today_classifications = len(classifications_df[classifications_df['timestamp'].astype(str).str.startswith(today)])
     #             st.metric("Today's Classifications", today_classifications)
-
     #     else:
     #         st.info("No classifications performed yet. Upload an image to get started!")
-
-
 
 
 def ai_classification_app():

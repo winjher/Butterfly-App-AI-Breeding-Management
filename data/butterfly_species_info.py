@@ -265,11 +265,11 @@ SPECIES_HOST_PLANTS = {
         'dailyConsumption': 170
     },
     'Butterfly-Scarlet Mormon': {
-        'plant': ['Aristolochia', 'Dutchman pipe', 'Birthwort'],
+        'plant': ['Orange', 'Pomelo', 'Citrus maxima', 'Lemon'],
         'dailyConsumption': 185
     },
     'Butterfly-Tailed Jay': {
-        'plant': ['Polyalthia', 'Annona', 'Sugar apple'],
+        'plant': ['Polyalthia', 'Annona', 'Sugar apple', 'Amuyon','Indian tree'],
         'dailyConsumption': 155
     },
     'Moth-Atlas': {
