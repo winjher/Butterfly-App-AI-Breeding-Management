@@ -265,7 +265,7 @@ SPECIES_HOST_PLANTS = {
         'dailyConsumption': 170
     },
     'Butterfly-Scarlet Mormon': {
-        'plant': ['Orange', 'Pomelo', 'Citrus maxima', 'Lemon'],
+        'plant': ['Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'],
         'dailyConsumption': 185
     },
     'Butterfly-Tailed Jay': {

@@ -83,8 +83,8 @@ class ButterflyApp:
         return {
             'butterfly_species_model': load_model('model_Butterfly_Species.h5'),
             'lifestages_model': load_model('model_Life_Stages.h5'),
+            'larvaldiseases_model': load_model('model_Larval_Diseases.h5'),
             'pupaedefects_model': load_model('model_Pupae_Defects.h5'),
-            'larvaldiseases_model': load_model('model_Larval_Diseases.h5')
         }
 
     def _get_class_info(self):
@@ -501,7 +501,7 @@ class ButterflyApp:
         st.subheader("🤖 Model Information")
         models = [
             "model_Butterfly_Species.h5", "model_Life_Stages.h5", 
-            "model_Pupae_Defects.h5", "model_Larval_Diseases.h5"
+            "model_Larval_Diseases.h5", "model_Pupae_Defects.h5",
         ]
         
         col1, col2 = st.columns(2)
