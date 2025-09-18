@@ -14,7 +14,7 @@ from modules.email_notifications import email_notifications_app
 from modules.landing_page import enhanced_landing_page
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
-# from modules.ai_classification import ai_classification_app
+from modules.larval_stages import get_larval_stages
 
 # Page configuration
 
@@ -55,10 +55,12 @@ def main():
         "👤 My Profile": "profile",
         "💎 Premium System": "premium",
         "🦋 Breeding Management": "breeding",
+        "🐛 Larval Stages": "larval_stages",
         "🤖 AI Classification": "ai_classification",
         "💰 Point of Sale": "pos",
         "📊 Sales Tracking": "sales_tracking",
-        "🌍 Farm Booking": "booking"
+        "🌍 Farm Booking": "booking",
+        
     }
 
     # Add admin-only features
@@ -69,6 +71,9 @@ def main():
     # Add role-specific dashboards
     if st.session_state.get('user_role') == 'student':
         apps["🎓 Student Dashboard"] = "student_dashboard"
+    
+    if st.session_state.get('user_role') == 'faculty':
+        apps["🎓 Faculty Dashboard"] = "faculty_dashboard"
 
     if st.session_state.get('user_role') == 'purchaser':
         apps["🛒 Purchaser Profile"] = "purchaser_profile"
@@ -82,7 +87,9 @@ def main():
         st.sidebar.success("📚 Student Dashboard with TESDA modules available")
     elif st.session_state.get('user_role') == 'enthusiast/tourist':
         st.sidebar.info("🦋 Tourism and booking features optimized for you")
-
+    elif st.session_state.get('user_role') == 'larval_stages':
+        st.sidebar.info("🦋 Access to larval stages management")
+        
     selected_app = st.sidebar.selectbox("Select Application", list(apps.keys()))
 
     # Logout button
@@ -118,6 +125,9 @@ def main():
         student_dashboard_app()
     elif app_key == "purchaser_profile":
         purchaser_profile_app()
+    elif app_key == "larval_stages":
+        get_larval_stages()
+
 
 def dashboard_app():
     """Dashboard overview of the entire ecosystem"""
@@ -167,6 +177,23 @@ def get_booking_count():
     except:
         pass
     return 0
+
+def get_premium_users_count():
+    """Get count of premium users"""
+    try:
+        import pandas as pd
+        if os.path.exists('users.csv'):
+            df = pd.read_csv('users.csv')
+            premium_users = df[df['is_premium'] == True]
+            return len(premium_users)
+    except:
+        pass
+    return 0 
+   
+# def get_lifecycle_stage(species_name, day_of_lifecycle):
+#     # function body
+#     pass
+
 
 if __name__ == "__main__":
     main()
