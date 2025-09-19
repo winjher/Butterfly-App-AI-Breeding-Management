@@ -1,7 +1,7 @@
 streamlit==1.47.1
-#tensorflow==2.20.0
+tensorflow==2.20.0
 pandas==2.2.3
 numpy>=1.26.0
 setuptools==68.0.0
 folium==0.14.0
-tensorflow==2.15.0
+#tensorflow==2.15.0
