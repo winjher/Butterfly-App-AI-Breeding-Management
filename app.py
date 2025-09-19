@@ -7,6 +7,7 @@ from modules.point_of_sale import point_of_sale_app
 from modules.sales_tracking import sales_tracking_app
 from modules.booking_system import booking_system_app
 from modules.student_dashboard import student_dashboard_app
+from modules.faculty_dashboard import faculty_dashboard_app
 from modules.purchaser_profile import purchaser_profile_app
 from modules.profile_management import profile_management_app
 from modules.premium_system import premium_system_app, admin_premium_management
@@ -123,6 +124,8 @@ def main():
         booking_system_app()
     elif app_key == "student_dashboard":
         student_dashboard_app()
+    elif app_key == "faculty_dashboard":
+        faculty_dashboard_app()
     elif app_key == "purchaser_profile":
         purchaser_profile_app()
     elif app_key == "larval_stages":

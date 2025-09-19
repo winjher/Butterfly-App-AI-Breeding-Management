@@ -97,3 +97,4 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-09-16 15:39:29,Species Identification,henry,Butterfly-Emerald Swallowtail,0.9986786246299744,,,,,,
 2025-09-18 16:07:45,Lifecycle Stage,rob,,,Pupae,0.9998977184295654,,,,
 2025-09-18 16:09:27,Pupae Defect Analysis,rob,,,,,,,Healthy Pupae,0.9971354007720947
+2025-09-19 12:21:09,Species Identification,ira,Butterfly-Tailed Jay,0.5327416062355042,,,,,,
