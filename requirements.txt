@@ -7,4 +7,5 @@ folium==0.14.0
 streamlit-folium==0.12.0
 email-notifications-app
 SendGridAPIClient
+sendgrid
 #tensorflow==2.15.0
