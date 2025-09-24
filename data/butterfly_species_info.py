@@ -312,6 +312,17 @@ LIFESTAGES_INFO = {
 }
 lifestages_names = list(LIFESTAGES_INFO.keys())
 
+# Larval stages and instars
+LARVAL_STAGES_INFO = {
+    "larval_stages": {
+        'day 1', 'day 2-first instar', 'day 3', 'day 4-second instar', 'day 5',
+        'day 6-third instar', 'day 7', 'day 8-fourth instar', 'day 9','day 10-fifth instar',
+        'day 11', 'day 12', 'day 13', 'day 14',
+    }
+}
+
+larval_stages = list(LARVAL_STAGES_INFO["larval_stages"])
+
 # Pupae defect information and quality assessment
 PUPAE_DEFECTS_INFO = {
     "Ant bites": {

@@ -184,13 +184,15 @@ class ButterflyApp:
                 species_result = self._classify_image(
                     img_buffer, self._models['butterfly_species_model'], 
                     self._class_info['butterfly_species_names'], self._class_info['butterfly_species_info']
+
                 )
                 if species_result:
                     results["species"] = {
                         "predicted_class": species_result['class_name'],
                         "confidence": species_result['score'] / 100,
                         "top_3": [{"class": pred['class_name'], "confidence": pred['score'] / 100} for pred in species_result['top_predictions']],
-                        "details": species_result
+                        "details": species_result,
+                        "hostplants_names": species_result.get('hostplants_names', [])#to solve keyerror
                     }
             
             if analysis_type in ["Complete Analysis (All Models)", "Lifecycle Stage"]:
@@ -272,7 +274,7 @@ class ButterflyApp:
                     "score": predicted_score,
                     "index": predicted_class_index,
                     "top_predictions": top_predictions,
-                    "model_details": details_dict
+                    "model_details": details_dict,
                 }
                 if details_dict and predicted_class_name in details_dict:
                     result_data.update(details_dict[predicted_class_name])
@@ -313,6 +315,8 @@ class ButterflyApp:
             details = species_result.get('details', {})
             st.write(f"**Scientific Name:** {details.get('scientific_name', 'Unknown')}")
             st.write(f"**Family:** {details.get('family', 'Unknown')}")
+            st.write(f"**Host Plants:** {details.get('hostplants', 'Unknown')}")
+
             if 'value' in details:
                 st.write(f"**Estimated Value:** ₱{details['value']}")
             if details.get('plant'):

@@ -98,3 +98,11 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-09-18 16:07:45,Lifecycle Stage,rob,,,Pupae,0.9998977184295654,,,,
 2025-09-18 16:09:27,Pupae Defect Analysis,rob,,,,,,,Healthy Pupae,0.9971354007720947
 2025-09-19 12:21:09,Species Identification,ira,Butterfly-Tailed Jay,0.5327416062355042,,,,,,
+2025-09-23 17:10:50,Lifecycle Stage,eric,,,Larvae,0.6093786358833313,,,,
+2025-09-23 22:10:06,Species Identification,eric,Butterfly-Paper Kite,0.5793628692626953,,,,,,
+2025-09-23 22:18:23,Lifecycle Stage,eric,,,Butterfly,0.9997076392173767,,,,
+2025-09-23 22:19:02,Species Identification,eric,Butterfly-Paper Kite,0.5793628692626953,,,,,,
+2025-09-23 22:28:00,Species Identification,ira,Butterfly-Common Mormon,0.995919942855835,,,,,,
+2025-09-23 22:28:48,Lifecycle Stage,ira,,,Butterfly,0.9996215105056763,,,,
+2025-09-24 00:33:10,Larval Disease Detection,ira,,,,,Healthy,0.9999539852142334,,
+2025-09-24 00:34:56,Lifecycle Stage,ira,,,Larvae,0.9929212927818298,,,,

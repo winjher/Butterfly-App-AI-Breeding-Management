@@ -395,13 +395,13 @@ from utils import csv_handlers
 # This Python script models the lifecycle stages of various butterflies and moths.
 # It tracks the progression through up to five instars, the pupal stage, and emergence as an adult.
 
-def get_lifecycle_stage(species_name: str, day_of_lifecycle: int) -> str:
+def get_lifecycle_stage(species_name: str, larval_stages: int) -> str:
     """
     Determines the current lifecycle stage of a butterfly or moth based on the number of days.
 
     Args:
         species_name: The name of the butterfly or moth (e.g., "Butterfly-Paper Kite").
-        day_of_lifecycle: The number of days that have passed since the egg hatched.
+        larval_stages: The number of days that have passed since the egg hatched.
 
     Returns:
         A string describing the current stage of the insect's lifecycle.
@@ -444,14 +444,14 @@ def get_lifecycle_stage(species_name: str, day_of_lifecycle: int) -> str:
     # Check for each instar stage
     for i in range(5):
         cumulative_days += instar_days[i]
-        if day_of_lifecycle < cumulative_days:
+        if larval_stages < cumulative_days:
             return f"The {species_name} is currently in Instar {i + 1}."
 
     # Check for the pupa stage
     pupa_start_day = cumulative_days
     pupa_end_day = pupa_start_day + pupa_days
-    if day_of_lifecycle < pupa_end_day:
-        days_in_pupa = day_of_lifecycle - pupa_start_day
+    if larval_stages < pupa_end_day:
+        days_in_pupa = larval_stages - pupa_start_day
         return f"The {species_name} is a pupa. It has been in this stage for {days_in_pupa} days."
 
     # If all stages are complete, the insect is an adult

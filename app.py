@@ -15,8 +15,7 @@ from modules.email_notifications import email_notifications_app
 from modules.landing_page import enhanced_landing_page
 from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
-from modules.larval_stages import get_larval_stages
-
+from modules.larval_stages import larval_stages_app
 # Page configuration
 
 
@@ -88,9 +87,10 @@ def main():
         st.sidebar.success("📚 Student Dashboard with TESDA modules available")
     elif st.session_state.get('user_role') == 'enthusiast/tourist':
         st.sidebar.info("🦋 Tourism and booking features optimized for you")
-    elif st.session_state.get('user_role') == 'larval_stages':
-        st.sidebar.info("🦋 Access to larval stages management")
-        
+    elif st.session_state.get('user_role') == 'admin':
+        st.sidebar.info("🔧 Admin features available"
+                        "\n- Manage Premium Users"
+                        "\n- Send Email Notifications")
     selected_app = st.sidebar.selectbox("Select Application", list(apps.keys()))
 
     # Logout button
@@ -129,8 +129,7 @@ def main():
     elif app_key == "purchaser_profile":
         purchaser_profile_app()
     elif app_key == "larval_stages":
-        get_larval_stages()
-
+        larval_stages_app()
 
 def dashboard_app():
     """Dashboard overview of the entire ecosystem"""
@@ -181,6 +180,7 @@ def get_booking_count():
         pass
     return 0
 
+ 
 def get_premium_users_count():
     """Get count of premium users"""
     try:
@@ -193,9 +193,6 @@ def get_premium_users_count():
         pass
     return 0 
    
-# def get_lifecycle_stage(species_name, day_of_lifecycle):
-#     # function body
-#     pass
 
 
 if __name__ == "__main__":

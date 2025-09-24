@@ -1,1 +1,2 @@
 user_id,username,transaction_type,amount,description,balance_before,balance_after,timestamp
+146,eric,bonus,200,Signup bonus - Free 200 pesos,0.0,200.0,2025-09-19 16:00:24
