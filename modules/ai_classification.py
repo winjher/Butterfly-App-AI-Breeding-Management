@@ -98,8 +98,8 @@ class ButterflyApp:
             'pupaedefects_names': list(PUPAE_DEFECTS_INFO.keys()),
             'larvaldiseases_info': LARVAL_DISEASES_INFO,
             'larvaldiseases_names': list(LARVAL_DISEASES_INFO.keys()),
-            'hostplants_names': list(SPECIES_HOST_PLANTS.keys()),
-            'hostplants_info': SPECIES_HOST_PLANTS,
+            'hostplants_species_names': list(SPECIES_HOST_PLANTS.keys()),
+            'hostplants_species_info': SPECIES_HOST_PLANTS,
         }
 
     def _check_model_directory(self):
@@ -192,7 +192,8 @@ class ButterflyApp:
                         "confidence": species_result['score'] / 100,
                         "top_3": [{"class": pred['class_name'], "confidence": pred['score'] / 100} for pred in species_result['top_predictions']],
                         "details": species_result,
-                        "hostplants_names": species_result.get('hostplants_names', [])#to solve keyerror
+                        "hostplants_species_names": species_result.get('hostplants_species_names', []),  # to solve keyerror
+                        "hostplants_species_info": species_result.get('hostplants_species_info', {})
                     }
             
             if analysis_type in ["Complete Analysis (All Models)", "Lifecycle Stage"]:
@@ -315,7 +316,18 @@ class ButterflyApp:
             details = species_result.get('details', {})
             st.write(f"**Scientific Name:** {details.get('scientific_name', 'Unknown')}")
             st.write(f"**Family:** {details.get('family', 'Unknown')}")
-            st.write(f"**Host Plants:** {details.get('hostplants', 'Unknown')}")
+            #st.write(f"**Host Plants:** {details.get('plant', 'Unknown')}")
+
+            # Use only 'plant' key for host plants
+            plants = details.get('plant')
+            if plants:
+                if isinstance(plants, list):
+                    st.write(f"**Host Plants:** {', '.join(plants)}")
+                else:
+                    st.write(f"**Host Plants:** {plants}")
+            else:
+                st.write("**Host Plants:** Unknown")
+
 
             if 'value' in details:
                 st.write(f"**Estimated Value:** ₱{details['value']}")

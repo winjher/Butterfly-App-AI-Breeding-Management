@@ -87,6 +87,7 @@
 #     return f"The {species_name} has emerged as an adult."
 
 
+from xml.parsers.expat import model
 import streamlit as st
 import pandas as pd
 import os
@@ -98,14 +99,23 @@ import numpy as np
 MODEL_DIR = 'model'  # Assuming the model is in the 'model' subdirectory
 MODEL_NAME = 'model_Larval_Stages.h5'
 IMAGE_SIZE = (180, 180) # Define the expected input size for the model
-CLASSIFICATION_CSV = 'ai_larval_stages.csv'
+CLASSIFICATION_CSV = 'ai_larval_stages_classification.csv'
 
 # Define the class names based on your confusion matrix
-larval_stages = [
-    'day 1', 'day 2-first instar', 'day 3', 'day 4-second instar', 'day 5',
-    'day 6-third instar', 'day 7', 'day 8-fourth instar', 'day 9','day 10-fifth instar', 
-    'day 11', 'day 12', 'day 13', 'day 14',
-]
+larval_stages_names = ['day 01',
+                    'day 02-first instar',
+                    'day 03',
+                    'day 04-second instar',
+                    'day 05',
+                    'day 06-third instar',
+                    'day 07',
+                    'day 08-fourth instar',
+                    'day 09',
+                    'day 10-fifth instar',
+                    'day 11',
+                    'day 12',
+                    'day 13',
+                    'day 14']
 def larval_stages_app():
     # st.title("Butterfly & Moth Larval Stages Tracker 🐛🦋")
     # st.markdown("This application helps you track the **larval stages** of various butterflies and moths.")
@@ -125,12 +135,22 @@ def larval_stages_app():
             return None
 
     # The AI classification function
-    def ai_larval_stages_classifier(image_file, model, larval_stages):
+    # def classify_images(image_path):
+    #     input_image = tf.keras.utils.load_img(image_path, target_size=(180,180))
+    #     input_image_array = tf.keras.utils.img_to_array(input_image)
+    #     input_image_exp_dim = tf.expand_dims(input_image_array,0)
+
+    #     predictions = model.predict(input_image_exp_dim)
+    #     result = tf.nn.softmax(predictions[0])
+    #     outcome = 'The Image belongs to ' + larval_stages_names[np.argmax(result)] + ' with a score of '+ str(np.max(result)*100)
+    #     return outcome
+    
+    def ai_larval_stages_classifier(image_file, model, larval_stages_names):
         """
         Classifies an uploaded image using the provided AI model.
         """
         if model is None:
-            return {"class_name": "Model Not Loaded", "score": 0.0, "index": -1, "top_predictions": []}
+            return {"larval_stages_names": "Model Not Loaded", "score": 0.0, "index": -1, "top_predictions": []}
 
         try:
             image = Image.open(image_file)
@@ -145,37 +165,55 @@ def larval_stages_app():
             top_indices = np.argsort(result)[::-1][:3]
             top_predictions = []
             for i in top_indices:
-                if i < len(larval_stages):
-                    class_name = larval_stages[i]
+                if i < len(larval_stages_names):
+                    class_name = larval_stages_names[i]
                     score = result[i].numpy() * 100
-                    top_predictions.append({"class_name": class_name, "score": score})
+                    top_predictions.append({"larval_stages_names": class_name, "score": score})
 
             predicted_class_index = np.argmax(result)
             predicted_score = np.max(result).item() * 100
 
-            if predicted_class_index < len(larval_stages):
-                predicted_class_name = larval_stages[predicted_class_index]
+            if predicted_class_index < len(larval_stages_names):
+                predicted_class_name = larval_stages_names[predicted_class_index]
                 result_data = {
-                    "class_name": predicted_class_name,
+                    "larval_stages_names": predicted_class_name,
                     "score": predicted_score,
                     "index": predicted_class_index,
                     "top_predictions": top_predictions
                 }
                 return result_data
+            elif predicted_class_index == len(larval_stages_names):
+                return {"larval_stages_names": "No Larva Detected", "score": predicted_score, "index": predicted_class_index, "top_predictions": top_predictions}
             else:
-                return {"class_name": "Unknown Class (Index out of bounds)", "score": 0.0, "index": predicted_class_index, "top_predictions": []}
+                return {"larval_stages_names": "Unknown Class (Index out of bounds)", "score": 0.0, "index": predicted_class_index, "top_predictions": []}
         except Exception as e:
             st.error(f"Error during image classification: {e}")
-            return None
+            return None 
+    
+    import csv 
+    import datetime
+    def save_larval_stage_prediction(prediction_result):
+        """Save larval stage prediction to CSV."""
+        with open(CLASSIFICATION_CSV, mode='a', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            # Write header if file is empty
+            if file.tell() == 0:
+                writer.writerow(['timestamp', 'predicted_stage', 'score'])
+            writer.writerow([
+                datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                prediction_result.get('larval_stages_names', ''),
+                f"{prediction_result.get('score', 0):.2f}"
+            ])
+            st.success("Prediction saved successfully. Days before pupae: " + str(LIFECYCLE_DURATIONS.get('Pupae', 0)))
 
-    def get_larval_stages(species_name: str, larval_stages: int) -> str:
+    def get_larval_stages(species_name: str, larval_stages_names: int) -> str:
         """
         Determines the current lifecycle stage of a butterfly or moth based on the number of days.
         """
         LIFECYCLE_DURATIONS = {
             "Butterfly-Clippers": [3, 4, 4, 5, 6, 15],
             "Butterfly-Common Jay": [4, 5, 4, 6, 7, 12],
-            "Butterfly-Common Lime": [3, 3, 4, 4, 5, 14],
+            "Butterfly-Common Lime": [2, 2, 2, 2, 2, 14],
             "Butterfly-Common Mime": [4, 4, 5, 5, 6, 18],
             "Butterfly-Common Mormon": [3, 4, 5, 5, 6, 16],
             "Butterfly-Emerald Swallowtail": [4, 4, 5, 6, 7, 15],
@@ -200,12 +238,12 @@ def larval_stages_app():
         cumulative_days = 0
         for i in range(5):
             cumulative_days += instar_days[i]
-            if larval_stages <= cumulative_days:
+            if larval_stages_names <= cumulative_days:
                 return f"The {species_name} is currently in Instar {i + 1}."
         pupa_start_day = cumulative_days
         pupa_end_day = pupa_start_day + pupa_days
-        if larval_stages <= pupa_end_day:
-            days_in_pupa = larval_stages - pupa_start_day
+        if larval_stages_names <= pupa_end_day:
+            days_in_pupa = larval_stages_names - pupa_start_day
             return f"The {species_name} is a pupa. It has been in this stage for {days_in_pupa} days."
         return f"The {species_name} has emerged as an adult."
 
@@ -230,14 +268,14 @@ def larval_stages_app():
             st.image(image_file, caption='Uploaded Image', use_container_width=True)
             if st.button("Classify Image"):
                 with st.spinner('Classifying...'):
-                    prediction_result = ai_larval_stages_classifier(image_file, larval_stages_model, larval_stages)
+                    prediction_result = ai_larval_stages_classifier(image_file, larval_stages_model, larval_stages_names=larval_stages_names)
                 
                 if prediction_result:
-                    st.success(f"**Predicted Larval Stage:** {prediction_result['class_name']} with a confidence of {prediction_result['score']:.2f}%")
+                    st.success(f"**Predicted Larval Stage:** {prediction_result['larval_stages_names']} with a confidence of {prediction_result['score']:.2f}%")
                     st.write("---")
                     st.subheader("Top Predictions")
                     for pred in prediction_result['top_predictions']:
-                        st.write(f"- **{pred['class_name']}**: {pred['score']:.2f}%")
+                        st.write(f"- **{pred['larval_stages_names']}**: {pred['score']:.2f}%")
 
     # Tab for larval instar data
     with tab2:
@@ -245,7 +283,7 @@ def larval_stages_app():
         LIFECYCLE_DURATIONS = {
             "Butterfly-Clippers": [3, 4, 4, 5, 6, 15],
             "Butterfly-Common Jay": [4, 5, 4, 6, 7, 12],
-            "Butterfly-Common Lime": [3, 3, 4, 4, 5, 14],
+            "Butterfly-Common Lime": [2, 2, 2, 2, 2, 14],
             "Butterfly-Common Mime": [4, 4, 5, 5, 6, 18],
             "Butterfly-Common Mormon": [3, 4, 5, 5, 6, 16],
             "Butterfly-Emerald Swallowtail": [4, 4, 5, 6, 7, 15],

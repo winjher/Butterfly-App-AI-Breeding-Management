@@ -9,3 +9,6 @@ email-notifications-app
 SendGridAPIClient
 sendgrid==6.12.4
 #tensorflow==2.15.0
+smtplib
+yagmail
+SendGrid

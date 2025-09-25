@@ -281,7 +281,7 @@ SPECIES_HOST_PLANTS = {
         'dailyConsumption': 190
     }
 }
-hosplants_names = list(SPECIES_HOST_PLANTS.keys())
+hostplants_species_names = list(SPECIES_HOST_PLANTS.keys())
 
 # Lifecycle stage information
 LIFESTAGES_INFO = {
@@ -314,14 +314,15 @@ lifestages_names = list(LIFESTAGES_INFO.keys())
 
 # Larval stages and instars
 LARVAL_STAGES_INFO = {
-    "larval_stages": {
-        'day 1', 'day 2-first instar', 'day 3', 'day 4-second instar', 'day 5',
-        'day 6-third instar', 'day 7', 'day 8-fourth instar', 'day 9','day 10-fifth instar',
+    "larval_stages_names"
+    "": {
+        'day 01', 'day 02-first instar', 'day 03', 'day 04-second instar', 'day 05',
+        'day 06-third instar', 'day 07', 'day 08-fourth instar', 'day 09','day 10-fifth instar',
         'day 11', 'day 12', 'day 13', 'day 14',
     }
 }
 
-larval_stages = list(LARVAL_STAGES_INFO["larval_stages"])
+larval_stages_names = list(LARVAL_STAGES_INFO["larval_stages_names"])
 
 # Pupae defect information and quality assessment
 PUPAE_DEFECTS_INFO = {
@@ -519,3 +520,21 @@ def calculate_feeding_requirements(species_name, larva_count):
         'host_plants': SPECIES_HOST_PLANTS[species_name]['plant'],
         'weekly_requirement_kg': round(total_daily * 7 / 1000, 2)
     }
+# Quality scoring for pupae defects
+PUPAE_QUALITY_SCORES = {
+    'Healthy Pupae': 1.0,
+    'Ant bites': 0.7,
+    'Deformed body': 0.4,
+    'Old Pupa': 0.6,
+    'Overbend': 0.5,
+    'Stretch abdomen': 0.3
+}
+
+def get_pupae_quality_score(defect_type):
+    """Get quality score for pupae defect type"""
+    return PUPAE_QUALITY_SCORES.get(defect_type, 0.0)
+
+def calculate_pupae_value(defect_type, base_price=15.0):
+    """Calculate monetary value based on pupae quality"""
+    quality_score = get_pupae_quality_score(defect_type)
+    return base_price * quality_score

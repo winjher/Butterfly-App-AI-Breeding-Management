@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+# from modules.database import init_database
 from modules.auth import handle_authentication
 from modules.breeding_management import breeding_management_app
 from modules.ai_classification import ai_classification_app
@@ -13,9 +14,13 @@ from modules.profile_management import profile_management_app
 from modules.premium_system import premium_system_app, admin_premium_management
 from modules.email_notifications import email_notifications_app
 from modules.landing_page import enhanced_landing_page
-from modules.database import initialize_databases
+# from modules.database import initialize_databases
 from modules.ui_components import apply_glassmorphism_style, set_background_image
 from modules.larval_stages import larval_stages_app
+#from modules.database import database_app
+#from modules.profit_calculator import calculate_batch_app
+# from modules.batch_management import get_active_batches_count
+# from modules.hostplants import get_host_plants, get_species_list, get_all_host_plants, get_plant_characteristics, get_species_by_plant, calculate_daily_foliage_demand
 # Page configuration
 
 
@@ -29,7 +34,7 @@ st.set_page_config(page_title="AI Butterfly Classification", page_icon="🦋", l
 # )
 
 # Initialize databases and directories
-initialize_databases()
+# initialize_databases()
 
 # Apply styling
 apply_glassmorphism_style()
@@ -46,7 +51,7 @@ def main():
         return
 
     # Main navigation
-    st.sidebar.title("🦋 Butterfly Ecosystem")
+    st.sidebar.title("🦋 LepVision")
     st.sidebar.write(f"Welcome, **{st.session_state.username}**!")
 
     # Navigation menu with role-based access
@@ -59,6 +64,8 @@ def main():
         "🤖 AI Classification": "ai_classification",
         "💰 Point of Sale": "pos",
         "📊 Sales Tracking": "sales_tracking",
+        "🌱 Host Plants": "host_plants",
+        "🌱 Batch Management": "batch_management",
         "🌍 Farm Booking": "booking",
         
     }
@@ -130,6 +137,10 @@ def main():
         purchaser_profile_app()
     elif app_key == "larval_stages":
         larval_stages_app()
+    elif app_key == "batch_management":
+        batch_management_app()
+    elif app_key == "host_plants":
+        host_plants_app()
 
 def dashboard_app():
     """Dashboard overview of the entire ecosystem"""
