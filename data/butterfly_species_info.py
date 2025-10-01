@@ -14,7 +14,9 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Tropical rainforests, secondary forests",
         "wingspan": "80-90mm",
         "conservation_status": "Stable",
-        "distribution": "Southeast Asia, Indonesia, Malaysia"
+        "distribution": "Southeast Asia, Indonesia, Malaysia",
+        'plant': ['Ixora', 'Wild Cucumber', 'Passiflora'],
+        'dailyConsumption': 120
     },
     "Butterfly-Common Jay": {
         "scientific_name": "Graphium doson",
@@ -25,7 +27,9 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Forest edges, gardens, parks",
         "wingspan": "70-85mm",
         "conservation_status": "Stable",
-        "distribution": "India, Southeast Asia, Southern China"
+        "distribution": "India, Southeast Asia, Southern China",
+        'plant': ['Avocado Tree', 'Soursop', 'Sugar Apple', 'Amuyon', 'Indian Tree'],
+        'dailyConsumption': 160
     },
     "Butterfly-Common Lime": {
         "scientific_name": "Papilio demoleus",
@@ -36,7 +40,9 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Gardens, citrus groves, urban areas",
         "wingspan": "80-100mm",
         "conservation_status": "Stable",
-        "distribution": "Asia, introduced to Caribbean and parts of America"
+        "distribution": "Asia, introduced to Caribbean and parts of America",
+        'plant': ['Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'],
+        'dailyConsumption': 140
     },
     "Butterfly-Common Mime": {
         "scientific_name": "Papilio clytia",
@@ -47,7 +53,9 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Forest areas, woodland edges",
         "wingspan": "85-95mm",
         "conservation_status": "Stable",
-        "distribution": "India, Southeast Asia"
+        "distribution": "India, Southeast Asia",
+        'plant': ['Clover Cinnamon', 'Wild Cinnamon', 'Aristolochia'],
+        'dailyConsumption': 150
     },
     "Butterfly-Common Mormon": {
         "scientific_name": "Papilio polytes",
@@ -58,7 +66,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Gardens, forest edges, agricultural areas",
         "wingspan": "90-110mm",
         "conservation_status": "Stable",
-        "distribution": "India, Southeast Asia, Southern China"
+        "distribution": "India, Southeast Asia, Southern China",
+        'plant': ['Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi', 'Lemoncito'],
+        'dailyConsumption': 155,
+        'value': 23
     },
     "Butterfly-Emerald Swallowtail": {
         "scientific_name": "Papilio palinurus",
@@ -69,7 +80,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Primary and secondary rainforests",
         "wingspan": "80-100mm",
         "conservation_status": "Vulnerable",
-        "distribution": "Southeast Asia, Indonesia, Philippines"
+        "distribution": "Southeast Asia, Indonesia, Philippines",
+        'plant': ['Curry Leafs', 'Pink Lime-Berry Tree', 'Glycosmis'],
+        'dailyConsumption': 180,
+        'value': 25
     },
     "Butterfly-Golden Birdwing": {
         "scientific_name": "Troides rhadamantus",
@@ -80,7 +94,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Primary rainforests, high canopy",
         "wingspan": "150-180mm",
         "conservation_status": "Protected",
-        "distribution": "Philippines (endemic)"
+        "distribution": "Philippines (endemic)",
+        'plant': ['Dutchman pipe', 'Indian Birthwort', 'Aristolochia'],
+        'dailyConsumption': 200,
+        'value': 30
     },
     "Butterfly-Gray Glassy Tiger": {
         "scientific_name": "Ideopsis juventa",
@@ -91,7 +108,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Forest clearings, edges, gardens",
         "wingspan": "70-85mm",
         "conservation_status": "Stable",
-        "distribution": "Southeast Asia, Indonesia"
+        "distribution": "Southeast Asia, Indonesia",
+        'plant': ['Parsonsia', 'Tylophora', 'Asclepias'],
+        'dailyConsumption': 130,
+        'value': 20
     },
     "Butterfly-Great Eggfly": {
         "scientific_name": "Hypolimnas bolina",
@@ -102,7 +122,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Gardens, forest edges, open areas",
         "wingspan": "85-100mm",
         "conservation_status": "Stable",
-        "distribution": "Indo-Pacific region, Australia"
+        "distribution": "Indo-Pacific region, Australia",
+        'plant': ['Portulaca', 'Synedrella', 'Asystasia'],
+        'dailyConsumption': 145,
+        'value': 22
     },
     "Butterfly-Great Yellow Mormon": {
         "scientific_name": "Papilio lowi",
@@ -113,7 +136,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Primary forests, mountainous regions",
         "wingspan": "120-140mm",
         "conservation_status": "Near Threatened",
-        "distribution": "Borneo (endemic)"
+        "distribution": "Borneo (endemic)",
+        'plant': ['Citrus species', 'Murraya', 'Glycosmis'],
+        'dailyConsumption': 175,
+        'value': 28
     },
     "Butterfly-Paper Kite": {
         "scientific_name": "Idea leuconoe",
@@ -124,7 +150,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Mangroves, coastal forests, gardens",
         "wingspan": "95-110mm",
         "conservation_status": "Stable",
-        "distribution": "Southeast Asia, Taiwan, Southern Japan"
+        "distribution": "Southeast Asia, Taiwan, Southern Japan",
+        'plant': ['Parsonsia', 'Tylophora', 'Gymnema'],
+        'dailyConsumption': 135,
+        'value': 21
     },
     "Butterfly-Pink Rose": {
         "scientific_name": "Pachliopta kotzebuea",
@@ -135,7 +164,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Forest areas, gardens with host plants",
         "wingspan": "80-90mm",
         "conservation_status": "Stable",
-        "distribution": "Philippines (endemic)"
+        "distribution": "Philippines (endemic)",
+        'plant': ['Aristolochia', 'Dutchman pipe', 'Birthwort'],
+        'dailyConsumption': 165,
+        'value': 24
     },
     "Butterfly-Plain Tiger": {
         "scientific_name": "Danaus chrysippus",
@@ -146,7 +178,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Open areas, gardens, grasslands",
         "wingspan": "70-80mm",
         "conservation_status": "Stable",
-        "distribution": "Africa, Asia, Australia"
+        "distribution": "Africa, Asia, Australia",
+        'plant': ['Calotropis', 'Asclepias', 'Crown flower'],
+        'dailyConsumption': 125,
+        'value': 18
     },
     "Butterfly-Red Lacewing": {
         "scientific_name": "Cethosia biblis",
@@ -157,7 +192,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Primary rainforests, shaded areas",
         "wingspan": "80-90mm",
         "conservation_status": "Vulnerable",
-        "distribution": "India, Southeast Asia"
+        "distribution": "India, Southeast Asia",
+        'plant': ['Passiflora', 'Adenia', 'Passion vine'],
+        'dailyConsumption': 170,
+        'value': 26
     },
     "Butterfly-Scarlet Mormon": {
         "scientific_name": "Papilio rumanzovia",
@@ -168,7 +206,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Primary forests, mountainous regions",
         "wingspan": "110-130mm",
         "conservation_status": "Protected",
-        "distribution": "Philippines (endemic)"
+        "distribution": "Philippines (endemic)",
+        'plant': ['Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'],
+        'dailyConsumption': 185,
+        'value': 29
     },
     "Butterfly-Tailed Jay": {
         "scientific_name": "Graphium agamemnon",
@@ -179,7 +220,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Gardens, forest edges, parks",
         "wingspan": "80-100mm",
         "conservation_status": "Stable",
-        "distribution": "India, Southeast Asia, Australia"
+        "distribution": "India, Southeast Asia, Australia",
+        'plant': ['Polyalthia', 'Annona', 'Sugar apple', 'Amuyon','Indian tree'],
+        'dailyConsumption': 155,
+        'value': 22
     },
     "Moth-Atlas": {
         "scientific_name": "Attacus atlas",
@@ -190,7 +234,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Tropical and subtropical forests",
         "wingspan": "200-280mm",
         "conservation_status": "Stable",
-        "distribution": "Asia, from India to Indonesia"
+        "distribution": "Asia, from India to Indonesia",
+        'plant': ['Rambutan', 'Willow', 'Privet', 'Tree of Heaven'],
+        'dailyConsumption': 220,
+        'value': 35
     },
     "Moth-Giant Silk": {
         "scientific_name": "Samia cynthia",
@@ -201,7 +248,10 @@ BUTTERFLY_SPECIES_INFO = {
         "habitat": "Deciduous forests, parks",
         "wingspan": "100-150mm",
         "conservation_status": "Stable",
-        "distribution": "Asia, introduced to North America"
+        "distribution": "Asia, introduced to North America",
+        'plant': ['Ailanthus', 'Cherry', 'Lilac', 'Privet'],
+        'dailyConsumption': 190,
+        'value': 32
     }
 }
 butterfly_species_names = list(BUTTERFLY_SPECIES_INFO.keys())

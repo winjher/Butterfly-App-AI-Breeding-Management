@@ -85,6 +85,7 @@ class ButterflyApp:
             'lifestages_model': load_model('model_Life_Stages.h5'),
             'larvaldiseases_model': load_model('model_Larval_Diseases.h5'),
             'pupaedefects_model': load_model('model_Pupae_Defects.h5'),
+            'larvalstages_model': load_model('model_Larval_Stages.h5'),
         }
 
     def _get_class_info(self):
@@ -191,9 +192,8 @@ class ButterflyApp:
                         "predicted_class": species_result['class_name'],
                         "confidence": species_result['score'] / 100,
                         "top_3": [{"class": pred['class_name'], "confidence": pred['score'] / 100} for pred in species_result['top_predictions']],
-                        "details": species_result,
-                        "hostplants_species_names": species_result.get('hostplants_species_names', []),  # to solve keyerror
-                        "hostplants_species_info": species_result.get('hostplants_species_info', {})
+                        "details": species_result, 
+                        
                     }
             
             if analysis_type in ["Complete Analysis (All Models)", "Lifecycle Stage"]:
@@ -237,6 +237,19 @@ class ButterflyApp:
                         "quality_info": defect_result.get('quality_info', 'No quality information available'),
                         "details": defect_result
                     }
+            if analysis_type in ["Complete Analysis (All Models)", "Larval Stages"]:
+                img_buffer.seek(0)
+                larval_stage = self._classify_image(
+                    img_buffer, self._models['larvalstages_model'], 
+                    self._class_info['larvalstages_names'], self._class_info['larvalstages_info']
+                )
+                if larval_stage:
+                    results["larval_stage"] = {
+                        "predicted_class": larval_stage['class_name'],
+                        "confidence": larval_stage['score'] / 100,
+                        "details": larval_stage
+                    }
+                       
         except Exception as e:
             st.error(f"Classification error: {str(e)}")
             results["error"] = str(e)
@@ -310,33 +323,19 @@ class ButterflyApp:
         st.write("### 🦋 Species Identification")
         col1, col2 = st.columns(2)
         with col1:
+            
             st.success(f"**Predicted Species:** {species_result['predicted_class']}")
             st.write(f"**Confidence:** {species_result['confidence']:.1%}")
-            
             details = species_result.get('details', {})
             st.write(f"**Scientific Name:** {details.get('scientific_name', 'Unknown')}")
             st.write(f"**Family:** {details.get('family', 'Unknown')}")
-            #st.write(f"**Host Plants:** {details.get('plant', 'Unknown')}")
+            st.write(f"**Discovered By:** {details.get('discovered', 'Unknown')} ({details.get('year', 'N/A')})")
+            st.write(f"**Habitat:** {details.get('habitat', 'Unknown')}")
+            st.write(f"**Description:** {details.get('description', 'Unknown')}")
+            st.write(f"**Host Plants:** {details.get('plant', 'Unknown')}")
+            st.write(f"**Daily Consumption:** {details.get('dailyConsumption', 0)}g")
+            st.write(f"**Estimated Value:** ₱{details.get('value', 0.0):.2f}")
 
-            # Use only 'plant' key for host plants
-            plants = details.get('plant')
-            if plants:
-                if isinstance(plants, list):
-                    st.write(f"**Host Plants:** {', '.join(plants)}")
-                else:
-                    st.write(f"**Host Plants:** {plants}")
-            else:
-                st.write("**Host Plants:** Unknown")
-
-
-            if 'value' in details:
-                st.write(f"**Estimated Value:** ₱{details['value']}")
-            if details.get('plant'):
-                plants = ", ".join(details['plant']) if isinstance(details['plant'], list) else details['plant']
-                st.write(f"**Host Plants:** {plants}")
-            if details.get('dailyConsumption'):
-                st.write(f"**Daily Consumption:** {details['dailyConsumption']}g")
-            
         with col2:
             st.write("**Top 3 Predictions:**")
             for i, pred in enumerate(species_result['top_3'], 1):
@@ -573,40 +572,7 @@ class ButterflyApp:
                 st.metric("Today's Classifications", today_classifications)
         else:
             st.info("No classifications performed yet. Upload an image to get started!")
-
-    # def _display_recent_classifications(self):
-    #     """Display recent classification results from the CSV file."""
-    #     st.subheader("📊 Recent Classifications")
-    #     classifications_df = load_from_csv(CLASSIFICATION_CSV)
         
-        
-    #     if not classifications_df.empty:
-    #         recent_classifications = classifications_df.tail(10).sort_values('timestamp', ascending=False)
-    #         st.dataframe(recent_classifications, use_container_width=True)
-
-    #         st.write("**Classification Statistics:**")
-    #         col1, col2, col3, col4, col5, col6 = st.columns(6)
-    #         with col1:
-    #             st.metric("Total Classifications", len(classifications_df))
-    #         with col2:
-    #             if 'predicted_species' in classifications_df.columns:
-    #                 st.metric("Species Identified", classifications_df['predicted_species'].nunique())
-    #         with col3:
-    #             if 'predicted_stage' in classifications_df.columns:
-    #                 st.metric("Life Stages Identified", classifications_df['predicted_stage'].nunique())
-    #         with col4:
-    #             if 'predicted_disease' in classifications_df.columns:
-    #                 #st.metric("Larval Diseases Identified", classifications_df['predicted_disease'].nunique())
-    #                 st.metric("Larval Diseases Identified", classifications_df['predicted_disease'].nunique())
-    #         with col5:
-    #             if 'predicted_defect' in classifications_df.columns:
-    #                 st.metric("Pupae Defects Identified", classifications_df['predicted_defect'].nunique())
-    #         with col6:
-    #             today = datetime.date.today().strftime('%Y-%m-%d')
-    #             today_classifications = len(classifications_df[classifications_df['timestamp'].astype(str).str.startswith(today)])
-    #             st.metric("Today's Classifications", today_classifications)
-    #     else:
-    #         st.info("No classifications performed yet. Upload an image to get started!")
 
 
 def ai_classification_app():
