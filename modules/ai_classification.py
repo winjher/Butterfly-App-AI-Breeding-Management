@@ -374,17 +374,16 @@ class ButterflyApp:
         with col1:
             if disease_result['predicted_class'] == "Healthy":
                 st.success(f"✅ {disease_result['predicted_class']} ({disease_result['confidence']:.1%})")
-                diseases = disease_result.get('diseases', {})
-                st.write(f"**Symptoms:** {diseases.get('symptoms', 'N/A')}")
-                st.write(f"**Spread Method:** {diseases.get('spread', 'N/A')}")
-                st.write(f"**Prevention:** {diseases.get('prevention', 'N/A')}")
-                st.write(f"**Impact Score:** {diseases.get('impact_score', 0.0):.2f}")
-                st.write(f"**Mortality Rate:** {diseases.get('mortality_rate', 0.0):.1%}")
-                st.write(f"**Contagious:** {'Yes' if diseases.get('is_contagious', False) else 'No'}")
             else:
                 st.warning(f"⚠️ {disease_result['predicted_class']} detected ({disease_result['confidence']:.1%})")
             st.write(f"**Treatment Information:** {disease_result['treatment']}")
-            
+            diseases = disease_result.get('diseases', {})
+            st.write(f"**Symptoms:** {diseases.get('symptoms', 'N/A')}")
+            st.write(f"**Spread Method:** {diseases.get('spread', 'N/A')}")
+            st.write(f"**Prevention:** {diseases.get('prevention', 'N/A')}")
+            st.write(f"**Mortality Rate:** {diseases.get('mortality_rate', 0.0):.1%}")
+            st.write(f"**Contagious:** {'Yes' if diseases.get('is_contagious', False) else 'No'}")
+        
         with col2:
             health_score, quality_grade = self._calculate_health_score_and_grade(disease_result, "Larval Diseases")
             st.metric("Health Score", f"{health_score:.1f}%")
