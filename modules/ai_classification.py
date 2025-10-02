@@ -382,7 +382,7 @@ class ButterflyApp:
             st.write(f"**Spread Method:** {diseases.get('spread', 'N/A')}")
             st.write(f"**Prevention:** {diseases.get('prevention', 'N/A')}")
             st.write(f"**Mortality Rate:** {diseases.get('mortality_rate', 0.0):.1%}")
-            st.write(f"**Contagious:** {'Yes' if diseases.get('is_contagious', False) else 'No'}")
+            st.write(f"**Contagious:** {'Yes' if diseases.get('contagious', False) else 'No'}")
         
         with col2:
             health_score, quality_grade = self._calculate_health_score_and_grade(disease_result, "Larval Diseases")

@@ -172,3 +172,4 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-10-02 09:26:02,Larval Disease Detection,Hei,,,,,Nucleopolyhedrosis,0.8308053016662598,,
 2025-10-02 09:28:41,Larval Disease Detection,Hei,,,,,Nucleopolyhedrosis,0.8308053016662598,,
 2025-10-02 09:33:29,Larval Disease Detection,Hei,,,,,Nucleopolyhedrosis,0.8308053016662598,,
+2025-10-02 09:44:07,Larval Disease Detection,Hei,,,,,Anaphylaxis Infection,0.9991329312324524,,
