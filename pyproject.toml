@@ -1,12 +1,23 @@
-
+[project]
 name = "lepvision"
+version = "0.1.0"
+description = "Butterfly classification and farm advisory system"
+requires-python = ">=3.11,<3.12"
+
 dependencies = [
   "tensorflow==2.15.0",
+  "jax==0.4.34",
+  "jaxlib==0.4.34",
   "keras",
   "opencv-python",
   "streamlit",
   "rich",
-  "jax==0.4.34",
-  "jaxlib==0.4.34"
+  "scikit-learn",
+  "pandas",
+  "matplotlib",
+  "sqlalchemy",
+  "protobuf<4",  # TensorFlow compatibility
+  "Pillow",
+  "fastapi",  # Optional: for API endpoints
+  "uvicorn",  # Optional: for serving FastAPI
 ]
-requires-python = ">=3.11,<3.12"
