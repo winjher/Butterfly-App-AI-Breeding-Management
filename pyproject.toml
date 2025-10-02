@@ -1,11 +1,12 @@
-[project]
-name = "repl-nix-workspace"
-version = "0.1.0"
-description = "Add your description here"
-requires-python = ">=3.11"
+
+name = "lepvision"
 dependencies = [
-    "folium>=0.20.0",
-    "streamlit-folium>=0.25.0",
-    "streamlit>=1.47.1",
-    "sendgrid>=6.12.4",
+  "tensorflow==2.15.0",
+  "keras",
+  "opencv-python",
+  "streamlit",
+  "rich",
+  "jax==0.4.34",
+  "jaxlib==0.4.34"
 ]
+requires-python = ">=3.11,<3.12"

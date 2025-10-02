@@ -403,3 +403,16 @@ def reset_database():
     # Reinitialize
     initialize_databases()
 
+toml
+[project]
+name = "repl-nix-workspace"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "folium>=0.20.0",
+    "streamlit-folium>=0.25.0",
+    "streamlit>=1.47.1",
+    "sendgrid>=6.12.4",
+]
+[project]
