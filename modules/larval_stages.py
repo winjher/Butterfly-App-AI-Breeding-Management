@@ -636,6 +636,7 @@ from typing import Dict, Any, List
 MODEL_DIR: str = 'model'
 MODEL_NAME: str = 'model_Larval_Stages.h5'
 IMAGE_SIZE: tuple = (180, 180)
+IMAGE_SIZE = (180, 180)
 CLASSIFICATION_CSV: str = 'ai_larval_stages_classification.csv'
 
 # Class names used by the AI model

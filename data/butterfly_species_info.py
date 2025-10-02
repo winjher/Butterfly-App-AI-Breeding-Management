@@ -579,6 +579,23 @@ PUPAE_QUALITY_SCORES = {
     'Overbend': 0.5,
     'Stretch abdomen': 0.3
 }
+# Class names used by the AI model
+LARVAL_STAGES_INFO = {
+    'day 01': 0,
+    'day 02-first instar': 1,
+    'day 03': 2,
+    'day 04-second instar': 3,
+    'day 05': 4,
+    'day 06-third instar': 5,
+    'day 07': 6,
+    'day 08-fourth instar': 7,
+    'day 09': 8,
+    'day 10-fifth instar': 9,
+    'day 11': 10,
+    'day 12': 11,
+    'day 13': 12,
+    'day 14': 13
+}
 
 def get_pupae_quality_score(defect_type):
     """Get quality score for pupae defect type"""

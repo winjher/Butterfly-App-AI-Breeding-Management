@@ -8,7 +8,7 @@ import tensorflow as tf
 from io import BytesIO
 
 # --- Assuming these modules exist in your project structure ---
-from data.butterfly_species_info import BUTTERFLY_SPECIES_INFO, LIFESTAGES_INFO, PUPAE_DEFECTS_INFO, LARVAL_DISEASES_INFO, SPECIES_HOST_PLANTS
+from data.butterfly_species_info import BUTTERFLY_SPECIES_INFO, LIFESTAGES_INFO, PUPAE_DEFECTS_INFO, LARVAL_DISEASES_INFO, SPECIES_HOST_PLANTS,LARVAL_STAGES_INFO
 from utils.csv_handlers import save_to_csv, load_from_csv
 
 # --- Configuration Constants ---
@@ -101,6 +101,8 @@ class ButterflyApp:
             'larvaldiseases_names': list(LARVAL_DISEASES_INFO.keys()),
             'hostplants_species_names': list(SPECIES_HOST_PLANTS.keys()),
             'hostplants_species_info': SPECIES_HOST_PLANTS,
+            'larval_stages_names': list(LARVAL_STAGES_INFO.keys()),
+            'larval_stages_info': LARVAL_STAGES_INFO,
         }
 
     def _check_model_directory(self):
@@ -193,7 +195,7 @@ class ButterflyApp:
                         "confidence": species_result['score'] / 100,
                         "top_3": [{"class": pred['class_name'], "confidence": pred['score'] / 100} for pred in species_result['top_predictions']],
                         "details": species_result, 
-                        
+
                     }
             
             if analysis_type in ["Complete Analysis (All Models)", "Lifecycle Stage"]:
@@ -357,7 +359,7 @@ class ButterflyApp:
         with col1:
             st.info(f"**Stage:** {lifecycle_result['predicted_class']} ({lifecycle_result['confidence']:.1%})")
             st.write(f"**Description:** {lifecycle_result['description']}")
-        
+            st.write(f"**Duration:** {lifecycle_result.get('duration', 'N/A')} days")
         with col2:
             recommendations = self._get_recommended_actions(lifecycle_result, "Life Stages")
             if recommendations:
@@ -372,10 +374,17 @@ class ButterflyApp:
         with col1:
             if disease_result['predicted_class'] == "Healthy":
                 st.success(f"✅ {disease_result['predicted_class']} ({disease_result['confidence']:.1%})")
+                diseases = disease_result.get('diseases', {})
+                st.write(f"**Symptoms:** {diseases.get('symptoms', 'N/A')}")
+                st.write(f"**Spread Method:** {diseases.get('spread', 'N/A')}")
+                st.write(f"**Prevention:** {diseases.get('prevention', 'N/A')}")
+                st.write(f"**Impact Score:** {diseases.get('impact_score', 0.0):.2f}")
+                st.write(f"**Mortality Rate:** {diseases.get('mortality_rate', 0.0):.1%}")
+                st.write(f"**Contagious:** {'Yes' if diseases.get('is_contagious', False) else 'No'}")
             else:
                 st.warning(f"⚠️ {disease_result['predicted_class']} detected ({disease_result['confidence']:.1%})")
             st.write(f"**Treatment Information:** {disease_result['treatment']}")
-        
+            
         with col2:
             health_score, quality_grade = self._calculate_health_score_and_grade(disease_result, "Larval Diseases")
             st.metric("Health Score", f"{health_score:.1f}%")
@@ -517,6 +526,7 @@ class ButterflyApp:
         models = [
             "model_Butterfly_Species.h5", "model_Life_Stages.h5", 
             "model_Larval_Diseases.h5", "model_Pupae_Defects.h5",
+            "model_Larval_Stages.h5"
         ]
         
         col1, col2 = st.columns(2)
@@ -535,6 +545,7 @@ class ButterflyApp:
             st.write("🔄 **Stages:** 4 lifecycle stages")
             st.write("🏥 **Diseases:** 4 larval disease types")
             st.write("🔍 **Defects:** 6 pupae defect types")
+            st.write("🐛 **Larval Stages:** 14 larval stages")
 
     def _display_recent_classifications(self):
         """Display recent classification results from the CSV file."""
