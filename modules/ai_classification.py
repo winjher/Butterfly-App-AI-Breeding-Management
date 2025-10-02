@@ -336,7 +336,7 @@ class ButterflyApp:
             st.write(f"**Description:** {details.get('description', 'Unknown')}")
             st.write(f"**Host Plants:** {details.get('plant', 'Unknown')}")
             st.write(f"**Daily Consumption:** {details.get('dailyConsumption', 0)}g")
-            st.write(f"**Estimated Value:** ₱{details.get('value', 0.0):.2f}")
+            #st.write(f"**Estimated Value:** ₱{details.get('value', 0.0):.2f}")
 
         with col2:
             st.write("**Top 3 Predictions:**")

@@ -173,3 +173,14 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-10-02 09:28:41,Larval Disease Detection,Hei,,,,,Nucleopolyhedrosis,0.8308053016662598,,
 2025-10-02 09:33:29,Larval Disease Detection,Hei,,,,,Nucleopolyhedrosis,0.8308053016662598,,
 2025-10-02 09:44:07,Larval Disease Detection,Hei,,,,,Anaphylaxis Infection,0.9991329312324524,,
+2025-10-02 09:46:17,Species Identification,Hei,Butterfly-Common Jay,0.988155722618103,,,,,,
+2025-10-02 09:48:30,Species Identification,Hei,Butterfly-Common Jay,0.988155722618103,,,,,,
+2025-10-02 09:49:40,Lifecycle Stage,Hei,,,Butterfly,0.9988480806350708,,,,
+2025-10-02 09:58:15,Species Identification,eric,Butterfly-Red Lacewing,0.9999983310699463,,,,,,
+2025-10-02 09:59:59,Lifecycle Stage,eric,,,Butterfly,0.9996744394302368,,,,
+2025-10-02 10:01:25,Lifecycle Stage,eric,,,Butterfly,0.9996744394302368,,,,
+2025-10-02 10:02:01,Lifecycle Stage,eric,,,Butterfly,0.9999674558639526,,,,
+2025-10-02 10:10:10,Larval Disease Detection,eric,,,,,Anaphylaxis Infection,0.9998337030410767,,
+2025-10-02 10:11:21,Lifecycle Stage,eric,,,Larvae,0.9999967813491821,,,,
+2025-10-02 10:23:18,Pupae Defect Analysis,eric,,,,,,,Healthy Pupae,0.42833200097084045
+2025-10-02 10:25:02,Pupae Defect Analysis,eric,,,,,,,Deformed body,0.9840377569198608
