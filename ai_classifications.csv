@@ -184,3 +184,8 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-10-02 10:11:21,Lifecycle Stage,eric,,,Larvae,0.9999967813491821,,,,
 2025-10-02 10:23:18,Pupae Defect Analysis,eric,,,,,,,Healthy Pupae,0.42833200097084045
 2025-10-02 10:25:02,Pupae Defect Analysis,eric,,,,,,,Deformed body,0.9840377569198608
+2025-10-06 06:52:57,Species Identification,ira,Butterfly-Tailed Jay,0.5399824380874634,,,,,,
+2025-10-06 06:53:44,Species Identification,ira,Butterfly-Gray Glassy Tiger,0.998883068561554,,,,,,
+2025-10-06 06:54:03,Lifecycle Stage,ira,,,Butterfly,0.9975851774215698,,,,
+2025-10-06 06:55:00,Lifecycle Stage,ira,,,Butterfly,0.9999979734420776,,,,
+2025-10-06 06:55:38,Species Identification,ira,Butterfly-Tailed Jay,0.9993114471435547,,,,,,
