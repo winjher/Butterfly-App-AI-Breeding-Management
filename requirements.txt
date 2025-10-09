@@ -28,6 +28,7 @@ decorator==5.1.1
 decouple==0.0.7
 distinctipy==1.3.4
 distlib==0.3.9
+disutils==0.1.3
 Django==5.0.4
 djangorestframework==3.15.1
 dm-tree==0.1.8
@@ -164,6 +165,7 @@ segment-anything==1.0
 selectivesearch==0.4
 semantic-version==2.10.0
 sendgrid==6.10.0
+setuptools==68.1.2
 shellingham==1.5.4
 simple-parsing==0.1.6
 six==1.16.0

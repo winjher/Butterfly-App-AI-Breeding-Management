@@ -194,3 +194,5 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-10-06 10:07:07,Species Identification,eric,Butterfly-Great Eggfly,0.9999806880950928,,,,,,
 2025-10-06 10:08:56,Larval Disease Detection,eric,,,,,Gnathostomiasis,0.9999949932098389,,
 2025-10-06 10:09:56,Lifecycle Stage,eric,,,Larvae,0.9998379945755005,,,,
+2025-10-09 11:47:31,Species Identification,Hei,Butterfly-Plain Tiger,0.9984627962112427,,,,,,
+2025-10-09 11:48:01,Lifecycle Stage,Hei,,,Butterfly,0.9876169562339783,,,,
