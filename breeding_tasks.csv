@@ -1,8 +1,11 @@
 task_id,title,type,priority,due_date,batch_id,description,status,created_by,created_date,completed_date
 TASK_20250728_041232,Cleaning,Cage Cleaning,Low,2025-07-28,eric 1,,completed,eric,2025-07-28 04:12:32,2025-09-10 10:39:05
-TASK_20250802_090955,Feeding leaf,Feeding,Medium,2025-08-02,,,pending,admin,2025-08-02 09:09:55,
-TASK_20250802_091008,Feeding leaf,Feeding,Medium,2025-08-02,jer101,,pending,admin,2025-08-02 09:10:08,
-TASK_20250802_092748,Planting,Plant Replacement,High,2025-08-02,PL101,planting tree to add  more hostplants,pending,rob,2025-08-02 09:27:48,
-TASK_20250916_172714,pest control for Clippers,Pest Control,Low,2025-09-16,,,pending,henry,2025-09-16 17:27:14
-TASK_20250916_172737,pest control for Clippers,Pest Control,Low,2025-09-16,PC 101,,pending,henry,2025-09-16 17:27:37
-TASK_20250916_172750,pest control for Clippers,Pest Control,Low,2025-09-16,PC 101,,pending,henry,2025-09-16 17:27:50
+TASK_20250802_090955,Feeding leaf,Feeding,Medium,2025-08-02,,,completed,admin,2025-08-02 09:09:55,2025-10-09 12:20:30
+TASK_20250802_091008,Feeding leaf,Feeding,Medium,2025-08-02,jer101,,completed,admin,2025-08-02 09:10:08,2025-10-09 12:20:28
+TASK_20250802_092748,Planting,Plant Replacement,High,2025-08-02,PL101,planting tree to add  more hostplants,completed,rob,2025-08-02 09:27:48,2025-10-09 12:20:26
+TASK_20250916_172714,pest control for Clippers,Pest Control,Low,2025-09-16,,,completed,henry,2025-09-16 17:27:14,2025-10-09 12:20:24
+TASK_20250916_172737,pest control for Clippers,Pest Control,Low,2025-09-16,PC 101,,completed,henry,2025-09-16 17:27:37,2025-10-09 12:20:23
+TASK_20250916_172750,pest control for Clippers,Pest Control,Low,2025-09-16,PC 101,,completed,henry,2025-09-16 17:27:50,2025-10-09 12:20:20
+TASK_20251009_122010,Rearing Common Mormon,Feeding,High,2025-10-09,CM - 01,pre-hatch egg ,pending,larry,2025-10-09 12:20:10,
+TASK_20251009_122758,Rearing Common Mormon,Quality Assessment,High,2025-10-09,QA- 01,Pupae of Common Lime,pending,larry,2025-10-09 12:27:58
+TASK_20251009_122930,Pupae Quality,Quality Assessment,High,2025-10-09,QA- 01,Pupae of Common Lime,pending,larry,2025-10-09 12:29:30

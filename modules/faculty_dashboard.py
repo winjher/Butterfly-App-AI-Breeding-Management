@@ -300,6 +300,41 @@ def display_learning_resources():
             "title": "Business Plan Template",
             "type": "Document",
             "description": "Template for creating a butterfly farm business plan"
+        },
+         {
+            "title": "Major Butterfly Species in the Philippines",
+            "type": "Document",
+            "description": "Template for species identification and characteristics"
+        },
+         {
+            "title": "Morphology of Butterflies and ID keys",
+            "type": "Document",
+            "description": "Template for identifying butterfly morphology and key characteristics"
+        },
+         {
+            "title": "Host and Nectar Plants of Butterflies",
+            "type": "Document",
+            "description": "Template for identifying host and nectar plants of butterflies"
+        },
+         {
+            "title": "Observational Data Sheet and Recording",
+            "type": "Document",
+            "description": "Template for creating a butterfly farm observational data sheet and recording"
+        },
+         {
+            "title": "Documentations Method",
+            "type": "Document",
+            "description": "Template for creating a butterfly farm documentations method"
+        },
+         {
+            "title": "Citizen Science Platform",
+            "type": "Document",
+            "description": "Template for creating a butterfly farm citizen science platform"
+        },
+         {
+            "title": "Rearing Butterflies",
+            "type": "Document and Hands-on Guide",
+            "description": "Template for creating a butterfly farm rearing plan"
         }
     ]
     

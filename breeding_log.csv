@@ -1,3 +1,8 @@
 timestamp,event_type,batch_id,description,logged_by
 2025-08-02 09:09:23,Feeding,HC 101,change cage,admin
 2025-08-02 09:28:40,Stage Change,SC101,transfer instars,rob
+2025-10-09 12:22:00,Humidity Change,HC-04,Humidity is high,larry
+2025-10-09 12:24:47,Mortality,MO-01,dead 1-Common Mormon Larvae 8days old,larry
+2025-10-09 12:25:26,Health Check,HC-01,Good condition 1-Common Mormon Larvae ,larry
+2025-10-09 12:26:53,Feeding,FD-01,"Sweet orange 1-Common Mormon Larvae 
+                             1- Common Lime Larvae",larry
