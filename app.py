@@ -65,7 +65,7 @@ def main():
         "💰 Point of Sale": "pos",
         "📊 Sales Tracking": "sales_tracking",
         "🌱 Host Plants": "host_plants",
-        "🌱 Batch Management": "batch_management",
+        # "🌱 Batch Management": "batch_management",
         "🌍 Farm Booking": "booking",
         
     }
@@ -137,10 +137,10 @@ def main():
         purchaser_profile_app()
     elif app_key == "larval_stages":
         larval_stages_app()
-    elif app_key == "batch_management":
-        batch_management_app()
-    elif app_key == "host_plants":
-        host_plants_app()
+    # elif app_key == "batch_management":
+    #     batch_management_app()
+    # elif app_key == "host_plants":
+    #     host_plants_app()
 
 def dashboard_app():
     """Dashboard overview of the entire ecosystem"""

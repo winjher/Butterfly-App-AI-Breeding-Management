@@ -49,8 +49,8 @@ def my_sales_section():
                 'Butterfly-Tailed Jay', 'Moth-Atlas', 'Moth-Giant Silk'
             ])
             
-            pupae_quantity = st.number_input("Pupae Quantity", min_value=1, value=1)
-            price_per_unit = st.number_input("Price per Pupa ($)", min_value=0.01, value=5.00, step=0.01)
+            pupae_quantity = st.number_input("Item Quantity", min_value=1, value=1)
+            price_per_unit = st.number_input("Price per Item ($)", min_value=0.01, value=5.00, step=0.01)
         
         # Additional details
         stage = st.selectbox("Stage", ["Egg", "Larva", "Pupa", "Adult"])

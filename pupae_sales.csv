@@ -1,1 +1,7 @@
 sale_id,sale_date,seller_username,buyer_name,buyer_contact,species,stage,quantity,price_per_unit,total_amount,quality_grade,payment_method,notes,recorded_at
+SALE_20251010_141316,2025-10-10,Hei,Garry Lyron,095865556623,Butterfly-Emerald Swallowtail,Pupa,8,25.50000000000007,204.00000000000057,Premium,Cash,,2025-10-10 14:13:16
+SALE_20251010_141448,2025-10-10,Hei,Cherryl Lyron,095865556623,Butterfly-Golden Birdwing,Pupa,5,15.5,77.5,Premium,Cash,,2025-10-10 14:14:48
+SALE_20251010_141512,2025-10-10,Hei,Cherryl Lyron,095865556623,Butterfly-Common Mime,Pupa,25,10.0,250.0,Premium,Cash,,2025-10-10 14:15:12
+SALE_20251010_141850,2025-10-10,ira,Garry Lyron,,Butterfly-Paper Kite,Adult,30,15.0,450.0,Premium,Cash,,2025-10-10 14:18:50
+SALE_20251010_141917,2025-10-10,ira,Garry Lyron,,Butterfly-Emerald Swallowtail,Adult,30,15.0,450.0,Premium,Cash,,2025-10-10 14:19:17
+SALE_20251010_141929,2025-10-10,ira,Garry Lyron,,Butterfly-Common Jay,Adult,30,15.0,450.0,Premium,Cash,,2025-10-10 14:19:29
