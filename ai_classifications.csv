@@ -220,3 +220,8 @@ timestamp,analysis_type,user,predicted_species,species_confidence,predicted_stag
 2025-10-10 13:57:52,Lifecycle Stage,Hei,,,Larvae,0.9747149348258972,,,,
 2025-10-10 13:58:32,Lifecycle Stage,Hei,,,Larvae,0.9996572732925415,,,,
 2025-10-10 14:10:27,Larval Disease Detection,Hei,,,,,Gnathostomiasis,0.9810576438903809,,
+2025-10-10 14:38:54,Pupae Defect Analysis,ira,,,,,,,Healthy Pupae,0.6198513507843018
+2025-10-10 14:39:58,Lifecycle Stage,ira,,,Larvae,0.5150436162948608,,,,
+2025-10-10 14:40:32,Lifecycle Stage,ira,,,Larvae,0.5150436162948608,,,,
+2025-10-10 14:44:24,Pupae Defect Analysis,ira,,,,,,,Healthy Pupae,0.6198513507843018
+2025-10-10 14:45:06,Lifecycle Stage,ira,,,Larvae,0.5150436162948608,,,,
