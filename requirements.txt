@@ -164,7 +164,7 @@ segment-anything==1.0
 selectivesearch==0.4
 semantic-version==2.10.0
 sendgrid==6.10.0
-setuptools==68.1.2
+setuptools>=65.0.0  # ✅ Modern replacement
 shellingham==1.5.4
 simple-parsing==0.1.6
 six==1.16.0
