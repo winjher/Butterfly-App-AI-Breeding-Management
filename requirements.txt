@@ -9,5 +9,6 @@ idna==3.10
 multidict==6.7.0
 propcache==0.4.1
 setuptools==80.9.0
+tensorflow==2.15.0
 wheel==0.45.1
 yarl==1.22.0
