@@ -8,7 +8,7 @@ import tensorflow as tf
 from io import BytesIO
 
 # --- Assuming these modules exist in your project structure ---
-from data.butterfly_species_info import BUTTERFLY_SPECIES_INFO, LIFESTAGES_INFO, PUPAE_DEFECTS_INFO, LARVAL_DISEASES_INFO, SPECIES_HOST_PLANTS,LARVAL_STAGES_INFO
+from data.butterfly_species_info import BUTTERFLY_SPECIES_INFO, LIFESTAGES_INFO, PUPAE_DEFECTS_INFO, LARVAL_DISEASES_INFO, SPECIES_HOST_PLANTS,LARVAL_STAGES_INFO, BREEDING_DIFFICULTY
 from utils.csv_handlers import save_to_csv, load_from_csv
 
 # --- Configuration Constants ---
@@ -488,6 +488,8 @@ class ButterflyApp:
             'disease_confidence': results.get("diseases", {}).get("confidence", ""),
             'predicted_defect': results.get("defects", {}).get("predicted_class", ""),
             'defect_confidence': results.get("defects", {}).get("confidence", ""),
+            'predicted_larval_stage': results.get("larval_stage", {}).get("predicted_class", ""),
+            'larval_stage_confidence': results.get("larval_stage", {}).get("confidence", ""),
          }
         
         if "species" in results:
@@ -510,9 +512,16 @@ class ButterflyApp:
                 'predicted_defect': results["defects"]["predicted_class"],
                 'defect_confidence': results["defects"]["confidence"]
             })
-        
+        if "larval_stage" in results:
+            analysis_data.update({
+                'predicted_larval_stage': results["larval_stage"]["predicted_class"],
+                'larval_stage_confidence': results["larval_stage"]["confidence"]
+            })
+        # Append to CSV
         save_to_csv(CLASSIFICATION_CSV, analysis_data)
-
+        df = pd.DataFrame([analysis_data])
+        df.to_csv(CLASSIFICATION_CSV, index=False)
+        
     def _display_info_sections(self):
         """Displays sections for model information and recent classifications."""
         self._display_model_info()

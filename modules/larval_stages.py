@@ -631,6 +631,7 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 from typing import Dict, Any, List
+from utils.csv_handlers import save_to_csv, load_from_csv
 
 # --- Configuration Constants ---
 MODEL_DIR: str = 'model'
@@ -789,12 +790,14 @@ def _display_recent_classifications():
         st.dataframe(recent, use_container_width=True)
 
         st.write("**Classification Statistics:**")
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
         
         with col1:
             st.metric("Total Classifications", len(df))
-        
         with col2:
+            avg_score = df['score'].mean() if 'score' in df.columns else 0
+            st.metric("Average Confidence", f"{avg_score:.2f}%")
+        with col3:
             if 'predicted_stage' in df.columns:
                 most_common = df['predicted_stage'].mode().iloc[0] if not df['predicted_stage'].mode().empty else "N/A"
                 st.metric("Most Common Stage", most_common)
@@ -817,7 +820,7 @@ def larval_stages_app():
 
     # Create tabs
     tab1, tab2 = st.tabs(["🧠 AI-Larval Stages Classifier", "🦋 Lifecycle Data"])
-
+    
     # Tab 1: AI classifier
     with tab1:
         st.subheader("AI-Larval Stages Classifier")
@@ -840,6 +843,7 @@ def larval_stages_app():
                         # Display top 3 predictions in a structured list
                         for pred in prediction_result['top_predictions']:
                             st.write(f"- **{pred['larval_stages_names']}**: {pred['score']:.2f}%")
+                            
                     else:
                         st.warning("Classification failed or model returned an unknown class.")
                 else:

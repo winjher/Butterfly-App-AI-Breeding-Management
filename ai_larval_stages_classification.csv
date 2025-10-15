@@ -51,3 +51,7 @@ timestamp,predicted_stage,score
 2025-10-06 06:59:43,day 11,99.85
 2025-10-06 07:00:31,day 02-first instar,99.49
 2025-10-08 12:28:43,day 06-third instar,99.97
+2025-10-14 12:44:35,day 04-second instar,91.67
+2025-10-14 12:47:27,day 04-second instar,99.30
+2025-10-14 12:49:50,day 09,99.88
+2025-10-15 13:18:51,day 02-first instar,99.71
