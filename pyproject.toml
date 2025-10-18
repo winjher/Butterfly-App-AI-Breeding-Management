@@ -1,23 +1,26 @@
+[build-system]
+requires = ["setuptools>=65.5.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "lepvision"
 version = "0.1.0"
-description = "Butterfly classification and farm advisory system"
-requires-python = ">=3.11.8,<3.12"
-
+description = "Butterfly classification pipeline with Streamlit deployment"
+authors = [{ name = "Jerwin", email = "your-email@example.com" }]
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
 dependencies = [
-  "tensorflow==2.15.0",
-  "jax==0.4.34",
-  "jaxlib==0.4.34",
-  "keras",
-  "opencv-python",
-  "streamlit",
-  "rich",
-  "scikit-learn",
-  "pandas",
-  "matplotlib",
-  "sqlalchemy",
-  "protobuf<4",  # TensorFlow compatibility
-  "Pillow",
-  "fastapi",  # Optional: for API endpoints
-  "uvicorn",  # Optional: for serving FastAPI
+    "numpy>=1.24,<1.26",
+    "tensorflow>=2.12",
+    "jax>=0.4.13",
+    "streamlit>=1.28",
+    "scikit-learn",
+    "pandas",
+    "matplotlib",
+    "Pillow",
+    "opencv-python",
+    "requests"
 ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
